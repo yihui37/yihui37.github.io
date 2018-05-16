@@ -3,23 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>vue.js | 陌丶笙情</title>
+  <title>css-border滑动动画 | 陌丶笙情</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="css边框滑动" />
   
   
   
-  <meta name="description" content="前端学习与成长记录，一些日常学习的心得，或是好的文章分享，工作爬坑记录等，或许还会放一些日常生活(*^__^*) 嘻嘻……">
+  
+  <meta name="description" content="本文主要使用css-transition属性来实现元素边框的流动动画效果  序无意中发现个人主页插件演示页面，在个人履历中看到了边框滑动效果，研究了一下发现是由纯css完成的，由此记录学习一下。在之前学习svg的过程中，实现过不规则图形的边框滑动效果，由于实现方式比较复杂，所以很少在实际项目中使用。 效果展示移动鼠标到这里查看效果~  原理分析调试分析后发现实际是使用两个同样大小的内外盒子，使用">
+<meta name="keywords" content="css,边框,滑动">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue.js">
-<meta property="og:url" content="http://yihui37.github.io/2018/01/12/vue-js/index.html">
+<meta property="og:title" content="css-border滑动动画">
+<meta property="og:url" content="http://yihui37.github.io/2018/02/27/css-border滑动动画/index.html">
 <meta property="og:site_name" content="陌丶笙情">
-<meta property="og:description" content="前端学习与成长记录，一些日常学习的心得，或是好的文章分享，工作爬坑记录等，或许还会放一些日常生活(*^__^*) 嘻嘻……">
+<meta property="og:description" content="本文主要使用css-transition属性来实现元素边框的流动动画效果  序无意中发现个人主页插件演示页面，在个人履历中看到了边框滑动效果，研究了一下发现是由纯css完成的，由此记录学习一下。在之前学习svg的过程中，实现过不规则图形的边框滑动效果，由于实现方式比较复杂，所以很少在实际项目中使用。 效果展示移动鼠标到这里查看效果~  原理分析调试分析后发现实际是使用两个同样大小的内外盒子，使用">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2018-01-12T03:53:59.000Z">
+<meta property="og:updated_time" content="2018-02-27T09:57:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue.js">
-<meta name="twitter:description" content="前端学习与成长记录，一些日常学习的心得，或是好的文章分享，工作爬坑记录等，或许还会放一些日常生活(*^__^*) 嘻嘻……">
+<meta name="twitter:title" content="css-border滑动动画">
+<meta name="twitter:description" content="本文主要使用css-transition属性来实现元素边框的流动动画效果  序无意中发现个人主页插件演示页面，在个人履历中看到了边框滑动效果，研究了一下发现是由纯css完成的，由此记录学习一下。在之前学习svg的过程中，实现过不规则图形的边框滑动效果，由于实现方式比较复杂，所以很少在实际项目中使用。 效果展示移动鼠标到这里查看效果~  原理分析调试分析后发现实际是使用两个同样大小的内外盒子，使用">
   
     <link rel="alternate" href="/atom.xml" title="陌丶笙情" type="application/atom+xml">
   
@@ -159,7 +162,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-vue-js" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-css-border滑动动画" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -167,7 +170,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      vue.js
+      css-border滑动动画
     </h1>
   
 
@@ -175,11 +178,13 @@
     
     <div class="article-meta">
       
-	<a href="/2018/01/12/vue-js/" class="article-date">
-	  <time datetime="2018-01-12T03:53:59.000Z" itemprop="datePublished">2018-01-12</time>
+	<a href="/2018/02/27/css-border滑动动画/" class="article-date">
+	  <time datetime="2018-02-27T07:49:51.000Z" itemprop="datePublished">2018-02-27</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/CSS奇幻世界/">CSS奇幻世界</a>
+
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -190,7 +195,16 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <blockquote>
+<p>本文主要使用<code>css-transition属性</code>来实现元素边框的流动动画效果</p>
+</blockquote>
+<h4 id="序"><a href="#序" class="headerlink" title="序"></a>序</h4><p>无意中发现个人主页插件<a href="http://www.jq22.com/yanshi17912" target="_blank" rel="noopener">演示页面</a>，在个人履历中看到了边框滑动效果，研究了一下发现是由纯css完成的，由此记录学习一下。<br>在之前学习svg的过程中，实现过不规则图形的边框滑动效果，由于实现方式比较复杂，所以很少在实际项目中使用。</p>
+<h4 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h4><div class="border-slide-wrapper"><div class="outwrap"><div class="innerwrap"><h3>移动鼠标到这里查看效果~</h3></div></div></div>
+
+<h4 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h4><p>调试分析后发现实际是使用两个同样大小的内外盒子，使用伪类元素<code>::before ::after</code>来模拟边框。一个盒子负责上下边框，另一个负责左右边框。由起点框开始变化，变化结束后，另一个盒子再承接上一个结束点进行变化，由此在视觉上看起来等同于一个盒子的边框动画。</p>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--html--&gt;</span><br><span class="line">&lt;div class="border-slide-wrapper"&gt;</span><br><span class="line">   &lt;div class="outwrap"&gt;</span><br><span class="line">      &lt;div class="innerwrap"&gt;</span><br><span class="line">         &lt;h3&gt;移动鼠标到这里查看效果~&lt;/h3&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*stylus*/</span></span><br><span class="line">.<span class="attribute">border</span>-slide-wrapper</span><br><span class="line">    <span class="attribute">text-align</span> center</span><br><span class="line">    <span class="attribute">margin</span> <span class="number">15px</span></span><br><span class="line">    .outwrap</span><br><span class="line">        <span class="attribute">position</span> relative</span><br><span class="line">        &amp;::before,&amp;::after</span><br><span class="line">            <span class="attribute">content</span> <span class="string">''</span></span><br><span class="line">            <span class="attribute">display</span> block</span><br><span class="line">            <span class="attribute">position</span> absolute</span><br><span class="line">            <span class="attribute">width</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">height</span> <span class="number">2px</span></span><br><span class="line">            <span class="attribute">background</span> <span class="number">#FF9D9B</span></span><br><span class="line">            transition .2s all linear // 无延迟</span><br><span class="line">        &amp;::before</span><br><span class="line">            <span class="attribute">top</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">left</span> <span class="number">0px</span></span><br><span class="line">        &amp;::after</span><br><span class="line">            <span class="attribute">bottom</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">right</span> <span class="number">0px</span></span><br><span class="line">        &amp;:hover::before,&amp;:hover::after</span><br><span class="line">            <span class="attribute">width</span> <span class="number">100%</span></span><br><span class="line">    .innerwrap</span><br><span class="line">        <span class="attribute">position</span> relative</span><br><span class="line">        &amp;::before,&amp;::after</span><br><span class="line">            <span class="attribute">content</span> <span class="string">''</span></span><br><span class="line">            <span class="attribute">display</span> block</span><br><span class="line">            <span class="attribute">position</span> absolute</span><br><span class="line">            <span class="attribute">width</span> <span class="number">2px</span></span><br><span class="line">            <span class="attribute">height</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">background</span> <span class="number">#FF9D9B</span></span><br><span class="line">            transition .2s all linear .2s  // 延迟.2s，等待前置滑动结束</span><br><span class="line">        &amp;::before</span><br><span class="line">            <span class="attribute">bottom</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">left</span> <span class="number">0px</span></span><br><span class="line">        &amp;::after</span><br><span class="line">            <span class="attribute">top</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">right</span> <span class="number">0px</span></span><br><span class="line">        &amp;:hover::before,&amp;:hover::after</span><br><span class="line">            <span class="attribute">height</span> <span class="number">100%</span></span><br><span class="line">        h3</span><br><span class="line">            <span class="attribute">padding</span> <span class="number">20px</span></span><br><span class="line">            <span class="attribute">color</span> <span class="number">#FF7C79</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -235,25 +249,18 @@ var a = new Donate({
 
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/滑动/">滑动</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/边框/">边框</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/02/27/css-border滑动动画/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          css-border滑动动画
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/12/欢迎使用马克飞象/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/01/12/vue-js/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">Markdown简介</div>
+      <div class="article-nav-title">vue.js</div>
     </a>
   
 </nav>
@@ -267,7 +274,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Inhalt</strong>
     
-        <ol class="nav">Nichts</ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#序"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果展示"><span class="nav-number">2.</span> <span class="nav-text">效果展示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">移动鼠标到这里查看效果~</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理分析"><span class="nav-number">1.</span> <span class="nav-text">原理分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码"><span class="nav-number">2.</span> <span class="nav-text">实现代码</span></a></li></ol>
     
     </div>
   </aside>

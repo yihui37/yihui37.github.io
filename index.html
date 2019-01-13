@@ -220,21 +220,38 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p class="article-excerpt-content">
-          VUE-CLI 3与VUE-CLI 2 的区别
-npm安装依赖名称变更 @vue/cli
-CLI2中的cofig文件夹取消，变更为使用在根目录下创建vue.config.js文件来进行配置
-CLI3实例化方式有区别，如下： 1234567891011// CLI2new Vue(&#123;  el: '#app',  template: '&lt;App/&gt;',  components: &#123; App &#125;&#125;)// CLI3new Vue(&#123;  ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2019/01/08/Fullstack-lesson1/#more">weiter lesen</a>
-        </p>
+        <h2 id="VUE-CLI-3与VUE-CLI-2-的区别"><a href="#VUE-CLI-3与VUE-CLI-2-的区别" class="headerlink" title="VUE-CLI 3与VUE-CLI 2 的区别"></a>VUE-CLI 3与VUE-CLI 2 的区别</h2><ul>
+<li>npm安装依赖名称变更 @vue/cli</li>
+<li>CLI2中的<code>cofig</code>文件夹取消，变更为使用在根目录下创建<code>vue.config.js</code>文件来进行配置</li>
+<li>CLI3实例化方式有区别，如下： <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CLI2</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  template: <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line">  components: &#123; App &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// CLI3</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App), <span class="comment">// 渲染App组件供$mount挂载</span></span><br><span class="line">&#125;).$mount(<span class="string">'#app'</span>)   <span class="comment">// 将render出的App组件挂载到DOM#app上</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="快速原型开发"><a href="#快速原型开发" class="headerlink" title="快速原型开发"></a>快速原型开发</h2><ul>
+<li><p>运行单个<code>.vue</code>文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli-service-global</span><br><span class="line">cd &lt;filepath&gt;</span><br><span class="line">vue serve &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>单个<code>.vue</code>文件中 data必须以function形式返回，而在组件形式的.vue文件中，则以对象形式返回</p>
+<h2 id="快速创建项目"><a href="#快速创建项目" class="headerlink" title="快速创建项目"></a>快速创建项目</h2><p>在<code>package.json</code>文件中，配置<code>start</code>和<code>dev/build</code>等，在执行时<code>start</code>不需要加<code>run</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br><span class="line">npm run dev</span><br><span class="line">npm run build</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Mock数据"><a href="#Mock数据" class="headerlink" title="Mock数据"></a>Mock数据</h2><ul>
+<li>项目根目录下配置<code>vue.config.js</code>文件，创建一个自定义的接口返回</li>
+<li>安装<code>axios</code>依赖</li>
+<li><strong>注意重启项目</strong></li>
+<li>如使用ES7的<code>async await</code>来处理异步，则注意错误处理使用<code>try catch</code></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
       
       
       
+      
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
+
       
 
     </footer>
@@ -275,23 +292,31 @@ CLI3实例化方式有区别，如下： 1234567891011// CLI2new Vue(&#123;  el:
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p class="article-excerpt-content">
-          
-本文主要讲述Element-UI中组件事件回调如何在保留默认传参的情况下，额外传递自定义参数。
+        <blockquote>
+<p>本文主要讲述Element-UI中组件事件回调如何在保留默认传参的情况下，额外传递自定义参数。</p>
+</blockquote>
+<p>Element-UI框架中的组件事件回调传参一般只有<code>v-model</code>的绑定值，然而在实际开发过程中，经常会遇到既需要绑定值，也需要其他参数（尤以循环数组需要当前对象和index居多）的情况。<br>在项目搭建伊始，这个问题就在困扰着我，当时的解决方法尤其笨拙：</p>
+<ul>
+<li><strong>在绑定组件上添加click事件，将自定义参数通过click事件绑定到全局变量中，之后通过全局变量来确定当前变更元素。</strong><br><em>此方法一是需要确保click事件比组件的change事件优先执行；二是新增了变量就意味着占据内存来存储一个既有值；三是一不小心就会忘了当前存储值是什么，需要不断log调试</em></li>
+</ul>
+<p>这个笨拙的方法虽然解决了问题，却有一种问我9✖️9等于多少，我只能用9+9+9+9+9+9+9+9+9=81累加方法算出答案，一直觉得麻烦，却不知道好方法的感觉。</p>
+<p>当然，如今我终于习得99乘法表。</p>
+<ul>
+<li><strong>使用闭包重新包装回调函数  </strong></li>
+<li><strong><code>@change=&quot;selectValue=&gt;handleChange(selectValue,index)&quot;</code></strong><br><em>此方法简单高效，直接解决了困扰已久的问题，激动无以言表</em></li>
+</ul>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>有一组数据selectedRepos，其中每个元素都需要通过远程搜索获取到可选列表再进行选择，同时将搜索结果作为属性值保存在当前元素中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div class=&quot;repoWrap&quot; v-for=&quot;(repo,index) of selectedRepos&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">		&lt;el-select </span><br><span class="line">			:ref=&quot;`repoSelect$&#123;index&#125;`&quot;</span><br><span class="line">			v-model=&quot;repo.id&quot; </span><br><span class="line">            remote </span><br><span class="line">            // 远程搜索，既需要查询条件query，也需要当前数组元素repo</span><br><span class="line">            :remote-method=&quot;query=&gt;remoteSearch(query,repo)&quot; </span><br><span class="line">            @change=&quot;selectRepo(repo)&quot; </span><br><span class="line">            :loading=&quot;remote_loading&quot;</span><br><span class="line">            value-key=&quot;repo_info.id&quot;&gt;</span><br><span class="line">			    &lt;el-option </span><br><span class="line">				    v-for=&quot;repo in repo.repoOptions&quot; </span><br><span class="line">				    :key=&quot;repo.id&quot; </span><br><span class="line">				    :label=&quot;repo.repo_name&quot; </span><br><span class="line">				    :value=&quot;repo&quot;&gt;</span><br><span class="line">	            &lt;/el-option&gt;</span><br><span class="line">        &lt;/el-select&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">	</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    methods:&#123;</span><br><span class="line">	    remoteSearch(query,repo)&#123;</span><br><span class="line">		    ...</span><br><span class="line">	    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 
-Element-UI框架中的组件事件回调传参一般只有v-model的绑定值，然而在实际开发过程中，经常会遇到既需要绑定值，也需要其他参数（尤以循环数组需要当前对象和index居多）的情况。在项目搭建伊始，这个问题就在困扰着我，当时的解决方法尤其笨拙：
-
-在绑定组件上添加click事件，将自定义参数通过click事件绑定到全局变量中，之后通过全局变量来确定当前变更元素。此方法一是需要确保cli...
-        </p>
-        <p class="article-more-link">
-          <a href="/2018/07/26/Element-UI组件回调自定义传参/#more">weiter lesen</a>
-        </p>
       
     </div>
     <footer class="article-footer">
       
       
       
+      
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Element-UI/">Element-UI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
+
       
 
     </footer>
@@ -332,26 +357,40 @@ Element-UI框架中的组件事件回调传参一般只有v-model的绑定值，
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p class="article-excerpt-content">
-          Element Dialog 无法关闭
+        <h1 id="Element-Dialog-无法关闭"><a href="#Element-Dialog-无法关闭" class="headerlink" title="Element Dialog 无法关闭"></a>Element Dialog 无法关闭</h1><hr>
+<blockquote>
+<p>本文主要介绍<code>Element-UI(VUE)·Dialog</code>的<code>append-to-body</code>属性</p>
+<p>你是否在使用Dialog的过程中，遇到过不能关闭或Dialog Events无效，却不知道如何解决？</p>
+<p>现在让我们一起来看看append-to-body能不能帮助你解决这个问题吧。</p>
+</blockquote>
+<h3 id="Dialog-官方文档"><a href="#Dialog-官方文档" class="headerlink" title="Dialog 官方文档 $"></a>Dialog 官方文档 <a href="http://element-cn.eleme.io/#/zh-CN/component/dialog" target="_blank" rel="noopener">$</a></h3><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1ftbop1qa02j31as06g3z2.jpg" alt="notice"></p>
+<h4 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h4><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1ftbor9vldaj31d405kwek.jpg" alt="Attributes"></p>
+<p>在实际开发过程中，虽然在单个组件中只有一个Dialog，但实际页面中，由于父子组件间的多层嵌套，Dialog也具有了嵌套的关系，从而导致内外Dialog的遮罩层级关系出错、无法捕捉关闭事件等一系列问题。<br><strong>因此，建议在每个Dialog组件都加上<code>append-to-body</code>属性来避免这一问题。</strong></p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><ul>
+<li><p>父组件</p>
+<figure class="highlight vbscript-html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父组件中的Dialog 第一层级 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;el-dialog id="serviceDetailDialog" :visible.sync="dialogVisible"&gt;</span><br><span class="line">	    &lt;!-- 子组件 --&gt;</span><br><span class="line">        &lt;serviceDetail&gt;&lt;/serviceDetail&gt;</span><br><span class="line">    &lt;/el-dialog&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子组件 serviceDetail</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    handleDeploy() &#123;</span><br><span class="line">      commonVue.$emit(<span class="string">'openServiceDeploy'</span>);  <span class="comment">// 打开公共组件</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>公共组件 rightContainer</p>
+<figure class="highlight vbscript-html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 子组件中的Dialog 第二层级 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;el-dialog id="rightContainer-dialog" :visible.sync="visible"&gt;</span><br><span class="line">      ...</span><br><span class="line">    &lt;/el-dialog&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>问题</strong>：在上例中，父组件有一个Dialog，其中嵌套了子组件serviceDetail，在serviceDetail组件中，调用了公共方法打开公共组件Dialog。此时，页面上共存两个dialog，但是父组件中的Dialog（页面视觉上在下面一层）无法关闭。<br><strong>解决方法</strong>：在父组件的Dialog上添加<code>append-to-body</code>属性，重组层级关系。<br><figure class="highlight vbscript-html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父组件中的Dialog 第一层级 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;el-dialog id="serviceDetailDialog" :visible.sync="dialogVisible" append-to-body&gt;</span><br><span class="line">	    &lt;!-- 子组件 --&gt;</span><br><span class="line">        &lt;serviceDetail&gt;&lt;/serviceDetail&gt;</span><br><span class="line">    &lt;/el-dialog&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>TIP</strong>：在开发过程中，很可能因为子组件中没有直接写Dialog代码，而忽略了公共组件中Dialog的嵌套问题，建议在每个Dialog组件都加上<code>append-to-body</code>属性来避免这一问题。</p>
+<p><em>PS：无脑添加<code>append-to-body</code>属性是否会带来性能方面的影响暂未研究。如有此方面研究，请不吝赐教。</em></p>
 
-本文主要介绍Element-UI(VUE)·Dialog的append-to-body属性
-你是否在使用Dialog的过程中，遇到过不能关闭或Dialog Events无效，却不知道如何解决？
-现在让我们一起来看看append-to-body能不能帮助你解决这个问题吧。
-
-Dialog 官方文档 $
-Attributes
-在实际开发过程中，虽然在单个组件中只有一个Dialog，但实际页面中，由于父子组件间的多层嵌套，Dialog也具有了嵌套的关系，...
-        </p>
-        <p class="article-more-link">
-          <a href="/2018/07/16/el-dialog关闭/#more">weiter lesen</a>
-        </p>
       
     </div>
     <footer class="article-footer">
       
       
       
+      
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dialog/">Dialog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Element-UI/">Element-UI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
+
       
 
     </footer>
@@ -392,25 +431,34 @@ Attributes
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p class="article-excerpt-content">
-          Element-UI Select 绑定值为Object对象类型
+        <h1 id="Element-UI-Select-绑定值为Object对象类型"><a href="#Element-UI-Select-绑定值为Object对象类型" class="headerlink" title="Element-UI Select 绑定值为Object对象类型"></a>Element-UI Select 绑定值为Object对象类型</h1><hr>
+<blockquote>
+<p>本文主要介绍<code>Element-UI(VUE)·Select</code>的<code>value-key</code>属性</p>
+<p>在使用Element1.0的开发过程中，option的<code>value</code>只能绑定字符串或数字，常常在选择之后再实时根据<code>v-model</code>绑定的值进行数据的筛选，从而获取到object中其它需要的属性数据；</p>
+<p>现在<code>Select</code>对value新增了object数据类型的支持，我们来看看要怎么使用吧。</p>
+</blockquote>
+<h3 id="Select-官方文档"><a href="#Select-官方文档" class="headerlink" title="Select 官方文档 $"></a>Select 官方文档 <a href="http://element-cn.eleme.io/#/zh-CN/component/select" target="_blank" rel="noopener">$</a></h3><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1ft8e8i8cnsj31cd03gq32.jpg" alt="notice"></p>
+<h4 id="Select-Attributes"><a href="#Select-Attributes" class="headerlink" title="Select Attributes"></a>Select Attributes</h4><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1ftbo0mp8wdj31dg04yaa1.jpg" alt="select attribute value-key"></p>
+<h4 id="Option-Attributes"><a href="#Option-Attributes" class="headerlink" title="Option Attributes"></a>Option Attributes</h4><p> <img src="https://ws2.sinaimg.cn/large/006tNc79gy1ftbo0nb5fwj31d605kt8o.jpg" alt="option attributes value"></p>
+<p>由此可以看出，当<code>value</code>绑定值类型为<strong>object</strong>时，<code>value-key</code>为必填项，其值为对象的某个<strong>key[字符串类型]</strong></p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;el-select</span><br><span class="line">       v-model=&quot;selectItems&quot;                 // Array</span><br><span class="line">       multiple                              // 多选</span><br><span class="line">       value-key=&quot;id&quot;                        // 指定object的唯一标识（id是item的一个key）</span><br><span class="line">       @change=&quot;handleChange&quot;&gt;</span><br><span class="line">            &lt;el-option</span><br><span class="line">                v-for=&quot;item in options&quot;</span><br><span class="line">                :key=&quot;item.id&quot;                // v-for 的 key</span><br><span class="line">                :label=&quot;item.title&quot;</span><br><span class="line">                :value=&quot;item&quot;&gt;</span><br><span class="line">            &lt;/el-option&gt;</span><br><span class="line">    &lt;/el-select&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        options: [&#123;</span><br><span class="line">          id:1,</span><br><span class="line">          value: &apos;选项1&apos;,</span><br><span class="line">          title: &apos;黄金糕&apos;</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">         id:2,</span><br><span class="line">          value: &apos;选项2&apos;,</span><br><span class="line">          title: &apos;双皮奶&apos;</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">          id:3,</span><br><span class="line">          value: &apos;选项3&apos;,</span><br><span class="line">          title: &apos;蚵仔煎&apos;</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">          id:4,</span><br><span class="line">          value: &apos;选项4&apos;,</span><br><span class="line">          title: &apos;龙须面&apos;</span><br><span class="line">        &#125;],</span><br><span class="line">        selectItems: [],</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        handleChange(selectItems)&#123;</span><br><span class="line">            console.log(&apos;选中值&apos;,selectItems);  // 选中值 [object,object]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>TIPS</p>
+<p><strong>注意区分select的<code>value-key</code>和option的<code>key</code></strong></p>
+<p>前者作为select的属性，是value值的唯一标识<br>后者是使用v-for时，给每个节点做一个唯一标识，此时key的作用主要是为了高效的更新虚拟DOM</p>
+</li>
+</ul>
 
-本文主要介绍Element-UI(VUE)·Select的value-key属性
-在使用Element1.0的开发过程中，option的value只能绑定字符串或数字，常常在选择之后再实时根据v-model绑定的值进行数据的筛选，从而获取到object中其它需要的属性数据；
-现在Select对value新增了object数据类型的支持，我们来看看要怎么使用吧。
-
-Select 官方文档 $
-Select Attribute...
-        </p>
-        <p class="article-more-link">
-          <a href="/2018/07/11/el-select绑定值为对象类型/#more">weiter lesen</a>
-        </p>
       
     </div>
     <footer class="article-footer">
       
       
       
+      
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Element-UI/">Element-UI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Select/">Select</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
+
       
 
     </footer>
@@ -451,24 +499,26 @@ Select Attribute...
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p class="article-excerpt-content">
-          
-本文主要使用css-transition属性来实现元素边框的流动动画效果
+        <blockquote>
+<p>本文主要使用<code>css-transition属性</code>来实现元素边框的流动动画效果</p>
+</blockquote>
+<h4 id="序"><a href="#序" class="headerlink" title="序"></a>序</h4><p>无意中发现个人主页插件<a href="http://www.jq22.com/yanshi17912" target="_blank" rel="noopener">演示页面</a>，在个人履历中看到了边框滑动效果，研究了一下发现是由纯css完成的，由此记录学习一下。<br>在之前学习svg的过程中，实现过不规则图形的边框滑动效果，由于实现方式比较复杂，所以很少在实际项目中使用。</p>
+<h4 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h4><div class="border-slide-wrapper"><div class="outwrap"><div class="innerwrap"><h3>移动鼠标到这里查看效果~</h3></div></div></div>
 
-序无意中发现个人主页插件演示页面，在个人履历中看到了边框滑动效果，研究了一下发现是由纯css完成的，由此记录学习一下。在之前学习svg的过程中，实现过不规则图形的边框滑动效果，由于实现方式比较复杂，所以很少在实际项目中使用。
-效果展示移动鼠标到这里查看效果~
+<h4 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h4><p>调试分析后发现实际是使用两个同样大小的内外盒子，使用伪类元素<code>::before ::after</code>来模拟边框。一个盒子负责上下边框，另一个负责左右边框。由起点框开始变化，变化结束后，另一个盒子再承接上一个结束点进行变化，由此在视觉上看起来等同于一个盒子的边框动画。</p>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--html--&gt;</span><br><span class="line">&lt;div class="border-slide-wrapper"&gt;</span><br><span class="line">   &lt;div class="outwrap"&gt;</span><br><span class="line">      &lt;div class="innerwrap"&gt;</span><br><span class="line">         &lt;h3&gt;移动鼠标到这里查看效果~&lt;/h3&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*stylus*/</span></span><br><span class="line">.<span class="attribute">border</span>-slide-wrapper</span><br><span class="line">    <span class="attribute">text-align</span> center</span><br><span class="line">    <span class="attribute">margin</span> <span class="number">15px</span></span><br><span class="line">    .outwrap</span><br><span class="line">        <span class="attribute">position</span> relative</span><br><span class="line">        &amp;::before,&amp;::after</span><br><span class="line">            <span class="attribute">content</span> <span class="string">''</span></span><br><span class="line">            <span class="attribute">display</span> block</span><br><span class="line">            <span class="attribute">position</span> absolute</span><br><span class="line">            <span class="attribute">width</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">height</span> <span class="number">2px</span></span><br><span class="line">            <span class="attribute">background</span> <span class="number">#FF9D9B</span></span><br><span class="line">            transition .2s all linear // 无延迟</span><br><span class="line">        &amp;::before</span><br><span class="line">            <span class="attribute">top</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">left</span> <span class="number">0px</span></span><br><span class="line">        &amp;::after</span><br><span class="line">            <span class="attribute">bottom</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">right</span> <span class="number">0px</span></span><br><span class="line">        &amp;:hover::before,&amp;:hover::after</span><br><span class="line">            <span class="attribute">width</span> <span class="number">100%</span></span><br><span class="line">    .innerwrap</span><br><span class="line">        <span class="attribute">position</span> relative</span><br><span class="line">        &amp;::before,&amp;::after</span><br><span class="line">            <span class="attribute">content</span> <span class="string">''</span></span><br><span class="line">            <span class="attribute">display</span> block</span><br><span class="line">            <span class="attribute">position</span> absolute</span><br><span class="line">            <span class="attribute">width</span> <span class="number">2px</span></span><br><span class="line">            <span class="attribute">height</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">background</span> <span class="number">#FF9D9B</span></span><br><span class="line">            transition .2s all linear .2s  // 延迟.2s，等待前置滑动结束</span><br><span class="line">        &amp;::before</span><br><span class="line">            <span class="attribute">bottom</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">left</span> <span class="number">0px</span></span><br><span class="line">        &amp;::after</span><br><span class="line">            <span class="attribute">top</span> <span class="number">0px</span></span><br><span class="line">            <span class="attribute">right</span> <span class="number">0px</span></span><br><span class="line">        &amp;:hover::before,&amp;:hover::after</span><br><span class="line">            <span class="attribute">height</span> <span class="number">100%</span></span><br><span class="line">        h3</span><br><span class="line">            <span class="attribute">padding</span> <span class="number">20px</span></span><br><span class="line">            <span class="attribute">color</span> <span class="number">#FF7C79</span></span><br></pre></td></tr></table></figure>
 
-原理分析调试分析后发现实际是使用两个同样大小的内外盒子，使用伪类元素::before ::after来模拟边框。一个盒子负责上下边框，另一个负责左右边框。...
-        </p>
-        <p class="article-more-link">
-          <a href="/2018/02/27/css-border滑动动画/#more">weiter lesen</a>
-        </p>
       
     </div>
     <footer class="article-footer">
       
       
       
+      
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/滑动/">滑动</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/边框/">边框</a></li></ul>
+
       
 
     </footer>
@@ -507,18 +557,15 @@ Select Attribute...
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p class="article-excerpt-content">
-          
-        </p>
-        <p class="article-more-link">
-          <a href="/2018/01/12/vue-js/#more">weiter lesen</a>
-        </p>
+        
       
     </div>
     <footer class="article-footer">
       
       
       
+      
+        
       
 
     </footer>
@@ -557,22 +604,88 @@ Select Attribute...
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p class="article-excerpt-content">
-          Markdown简介
-Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— 维基百科
+        <h2 id="Markdown简介"><a href="#Markdown简介" class="headerlink" title="Markdown简介"></a>Markdown简介</h2><blockquote>
+<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— <a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="noopener">维基百科</a></p>
+</blockquote>
+<p>正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为<strong>粗体</strong>或者<em>斜体</em>，创建一个<a href="http://www.example.com" target="_blank" rel="noopener">链接</a>或一个脚注[^demo]。下面列举了几个高级功能，更多语法请按<code>Ctrl + /</code>查看帮助。</p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@requires_authorization</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">somefunc</span><span class="params">(param1=<span class="string">''</span>, param2=<span class="number">0</span>)</span>:</span></span><br><span class="line">    <span class="string">'''A docstring'''</span></span><br><span class="line">    <span class="keyword">if</span> param1 &gt; param2: <span class="comment"># interesting</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">'Greater'</span></span><br><span class="line">    <span class="keyword">return</span> (param2 - param1 + <span class="number">1</span>) <span class="keyword">or</span> <span class="keyword">None</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>message = <span class="string">'''interpreter</span></span><br><span class="line"><span class="string"><span class="meta">... </span>prompt'''</span></span><br></pre></td></tr></table></figure>
+<h3 id="LaTeX-公式"><a href="#LaTeX-公式" class="headerlink" title="LaTeX 公式"></a>LaTeX 公式</h3><p>可以创建行内公式，例如 $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$。或者块级公式：</p>
+<p>$$    x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">Item</th>
+<th style="text-align:right">Value</th>
+<th style="text-align:center">Qty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Computer</td>
+<td style="text-align:right">1600 USD</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:left">Phone</td>
+<td style="text-align:right">12 USD</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:left">Pipe</td>
+<td style="text-align:right">1 USD</td>
+<td style="text-align:center">234</td>
+</tr>
+</tbody>
+</table>
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Start</span><br><span class="line">e=&gt;end</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<p>以及时序图:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>提示：</strong>想了解更多，请查看<strong>流程图</strong><a href="http://adrai.github.io/flowchart.js/" target="_blank" rel="noopener">语法</a>以及<strong>时序图</strong><a href="http://bramp.github.io/js-sequence-diagrams/" target="_blank" rel="noopener">语法</a>。</p>
+</blockquote>
+<h3 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h3><p>使用 <code>- [ ]</code> 和 <code>- [x]</code> 语法可以创建复选框，实现 todo-list 等功能。例如：</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 已完成事项</li>
+<li style="list-style: none"><input type="checkbox"> 待办事项1</li>
+<li style="list-style: none"><input type="checkbox"> 待办事项2</li>
+</ul>
+<blockquote>
+<p><strong>注意：</strong>目前支持尚不完全，在印象笔记中勾选复选框是无效、不能同步的，所以必须在<strong>马克飞象</strong>中修改 Markdown 原文才可生效。下个版本将会全面支持。</p>
+</blockquote>
+<h2 id="印象笔记相关"><a href="#印象笔记相关" class="headerlink" title="印象笔记相关"></a>印象笔记相关</h2><h3 id="笔记本和标签"><a href="#笔记本和标签" class="headerlink" title="笔记本和标签"></a>笔记本和标签</h3><p><strong>马克飞象</strong>增加了<code>@(笔记本)[标签A|标签B]</code>语法, 以选择笔记本和添加标签。 <strong>绑定账号后</strong>， 输入<code>(</code>自动会出现笔记本列表，请从中选择。</p>
+<h3 id="笔记标题"><a href="#笔记标题" class="headerlink" title="笔记标题"></a>笔记标题</h3><p><strong>马克飞象</strong>会自动使用文档内出现的第一个标题作为笔记标题。例如本文，就是第一行的 <code>欢迎使用马克飞象</code>。</p>
+<h3 id="快捷编辑"><a href="#快捷编辑" class="headerlink" title="快捷编辑"></a>快捷编辑</h3><p>保存在印象笔记中的笔记，右上角会有一个红色的编辑按钮，点击后会回到<strong>马克飞象</strong>中打开并编辑该笔记。</p>
+<blockquote>
+<p><strong>注意：</strong>目前用户在印象笔记中单方面做的任何修改，马克飞象是无法自动感知和更新的。所以请务必回到马克飞象编辑。</p>
+</blockquote>
+<h3 id="数据同步"><a href="#数据同步" class="headerlink" title="数据同步"></a>数据同步</h3><p><strong>马克飞象</strong>通过<strong>将Markdown原文以隐藏内容保存在笔记中</strong>的精妙设计，实现了对Markdown的存储和再次编辑。既解决了其他产品只是单向导出HTML的单薄，又规避了服务端存储Markdown带来的隐私安全问题。这样，服务端仅作为对印象笔记 API调用和数据转换之用。</p>
+<blockquote>
+<p><strong>隐私声明：用户所有的笔记数据，均保存在印象笔记中。马克飞象不存储用户的任何笔记数据。</strong></p>
+</blockquote>
+<h3 id="离线存储"><a href="#离线存储" class="headerlink" title="离线存储"></a>离线存储</h3><p><strong>马克飞象</strong>使用浏览器离线存储将内容实时保存在本地，不必担心网络断掉或浏览器崩溃。为了节省空间和避免冲突，已同步至印象笔记并且不再修改的笔记将删除部分本地缓存，不过依然可以随时通过<code>文档管理</code>打开。</p>
+<blockquote>
+<p><strong>注意：</strong>虽然浏览器存储大部分时候都比较可靠，但印象笔记作为专业云存储，更值得信赖。以防万一，<strong>请务必经常及时同步到印象笔记</strong>。</p>
+</blockquote>
+<h2 id="编辑器相关"><a href="#编辑器相关" class="headerlink" title="编辑器相关"></a>编辑器相关</h2><h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>右侧系统菜单（快捷键<code>Ctrl + M</code>）的<code>设置</code>中，提供了界面字体、字号、自定义CSS、vim/emacs 键盘模式等高级选项。</p>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p>帮助    <code>Ctrl + /</code><br>同步文档    <code>Ctrl + S</code><br>创建文档    <code>Ctrl + Alt + N</code><br>最大化编辑器    <code>Ctrl + Enter</code><br>预览文档 <code>Ctrl + Alt + Enter</code><br>文档管理    <code>Ctrl + O</code><br>系统菜单    <code>Ctrl + M</code> </p>
+<p>加粗    <code>Ctrl + B</code><br>插入图片    <code>Ctrl + G</code><br>插入链接    <code>Ctrl + L</code><br>提升标题    <code>Ctrl + H</code></p>
+<h2 id="关于收费"><a href="#关于收费" class="headerlink" title="关于收费"></a>关于收费</h2><p><strong>马克飞象</strong>为新用户提供 10 天的试用期，试用期过后需要<a href="maxiang.info/vip.html">续费</a>才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。</p>
+<h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
+<li>微博：<a href="http://weibo.com/u/2788354117" target="_blank" rel="noopener">@马克飞象</a>，<a href="http://weibo.com/ggock" title="开发者个人账号" target="_blank" rel="noopener">@GGock</a></li>
+<li>邮箱：<a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#104;&#x75;&#115;&#116;&#103;&#x6f;&#99;&#x6b;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#104;&#x75;&#115;&#116;&#103;&#x6f;&#99;&#x6b;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></li>
+</ul>
+<hr>
+<p>感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</p>
+<p>[^demo]: 这是一个示例脚注。请查阅 <a href="https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide#footnotes" target="_blank" rel="noopener">MultiMarkdown 文档</a> 关于脚注的说明。 <strong>限制：</strong> 印象笔记的笔记内容使用 <a href="https://dev.yinxiang.com/doc/articles/enml.php" target="_blank" rel="noopener">ENML</a> 格式，基于 HTML，但是不支持某些标签和属性，例如id，这就导致<code>脚注</code>和<code>TOC</code>无法正常点击。</p>
 
-正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为粗体或者斜体，创建一个链接或一个脚注[^demo]。下面列举了几个高级功能，更多语法请按Ctrl + /查看帮助。
-代码块12345678910@requires_authorizationdef somefunc(param1='', param2=0)...
-        </p>
-        <p class="article-more-link">
-          <a href="/2018/01/12/欢迎使用马克飞象/#more">weiter lesen</a>
-        </p>
       
     </div>
     <footer class="article-footer">
       
       
       
+      
+        
       
 
     </footer>
@@ -611,19 +724,24 @@ Markdown 是一种轻量级标记语言，它允许人们使用易读易写的�
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p class="article-excerpt-content">
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post...
-        </p>
-        <p class="article-more-link">
-          <a href="/2018/01/12/hello-world/#more">weiter lesen</a>
-        </p>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
       
     </div>
     <footer class="article-footer">
       
       
       
+      
+        
       
 
     </footer>

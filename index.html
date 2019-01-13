@@ -191,6 +191,95 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-Fullstack-lesson2"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/01/13/Fullstack-lesson2/">Fullstack lesson2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2019/01/13/Fullstack-lesson2/" class="article-date">
+	  <time datetime="2019-01-13T12:10:07.000Z" itemprop="datePublished">2019-01-13</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Fullstack/">Fullstack</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>本文为自己学习笔记，而不是一篇教程，仅供自己日后回顾使用<br>但若其中某tip能为你提供些许帮助，你可以在心里为我撒个花花🌹(<em>^__^</em>) </p>
+<h2 id="自己写一个el-form"><a href="#自己写一个el-form" class="headerlink" title="自己写一个el-form"></a>自己写一个el-form</h2><p>参照element-ui自己尝试模拟写了一个el-form的公共组件，实现登录验证功能：</p>
+<ul>
+<li><code>input</code>失去焦点时进行单个验证</li>
+<li>点击登录按钮时整体表单验证</li>
+<li>验证使用<code>async-validate</code>插件完成</li>
+</ul>
+</blockquote>
+<h2 id="组件层级"><a href="#组件层级" class="headerlink" title="组件层级"></a>组件层级</h2><p>本次登录组件主要由三个组件组成</p>
+<ul>
+<li><code>Form</code> - 最外层表单</li>
+<li><code>FormItem</code> - 表单项</li>
+<li><code>Input</code> - 表单数据输入，可以由不同其他DOM代替<br>三者关系如图<br>TODO 图<h2 id="Slot"><a href="#Slot" class="headerlink" title="Slot"></a>Slot</h2>组件间由<code>slot</code>插槽进行相互关联，因此不可用<code>@event</code>来绑定监听事件，即插槽内的子组件不可用直接用<code>$emit</code>来触发父组件事件。<br>解决方式</li>
+<li><code>this.$parent.$emit</code><br>存在问题：如果用户不按照既定层级编写组件，则会存在<code>this.$parent</code>不是我们要找的<code>FormItem</code>的问题</li>
+<li>commonVue绑定（不推荐）<br>需要自己实例化一个外部VUE，并引入，并且事件的绑定和触发来源会难以追溯<h2 id="Provide-amp-Inject"><a href="#Provide-amp-Inject" class="headerlink" title="Provide&amp;Inject"></a>Provide&amp;Inject</h2><blockquote>
+<p><a href="https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5" target="_blank" rel="noopener">官方说明</a><br><strong>注意：provide 和 inject 主要为高阶插件/组件库提供用例。并不推荐直接用于应用程序代码中。</strong><br>我们在<code>Form</code>层级将表单父级使用<code>provide</code>抛出，在<code>FormItem</code>层级通过<code>Inject</code>将父级依赖注入，这样不论<code>FormItem</code>是多少层级的组件，都可以直接获得最外父级的属性和方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">name: <span class="string">"my-form"</span>,</span><br><span class="line">  provide() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="comment">// 将表单实例传递给后代</span></span><br><span class="line">      form: <span class="keyword">this</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  name: <span class="string">"my-form-item"</span>,</span><br><span class="line">  inject: [<span class="string">"form"</span>], <span class="comment">// 注入form，获取model和rules</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>这样，在<code>FormItem</code>进行验证的时候，就可以使用用户绑定在<code>Form</code>中的验证项和验证规则</p>
+<h2 id="Input的事件"><a href="#Input的事件" class="headerlink" title="Input的事件"></a>Input的事件</h2><p>作为表单输入框，<code>input</code>主要承担数据的输入工作，一方面它接受父组件传入的参数作为默认值，另一方面在用户改变输入值的同时触发校验</p>
+<ul>
+<li>单向数据流<br>  根据<code>VUE</code>的单向数据流规则，从<code>props</code>获取到的数据，子组件是不允许修改的，因此<code>input</code>在用户改变输入之后的处理回调里，需要通知父组件进行数据更新</li>
+<li>触发校验<br>  <code>input</code>的校验通常有<code>@blur</code>和<code>@input</code>两种，可以在组件上新增一个<code>trigger</code>属性，用户就可以自己选择触发方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;input :type=<span class="string">"type"</span> :value=<span class="string">"inputValue"</span> @blur=<span class="string">"validate"</span> /&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">"my-input"</span>,</span><br><span class="line">  props: &#123;</span><br><span class="line">    value: &#123;</span><br><span class="line">      type: <span class="built_in">String</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="string">""</span></span><br><span class="line">    &#125;,</span><br><span class="line">    type: &#123;</span><br><span class="line">      type: <span class="built_in">String</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="string">"text"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      inputValue: <span class="keyword">this</span>.value <span class="comment">// 单向数据流,接受父组件传过来的默认值</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    validate(e) &#123;</span><br><span class="line">      <span class="keyword">this</span>.inputValue = e.target.value;</span><br><span class="line">        <span class="comment">// 必要，通知父组件更新</span></span><br><span class="line">      <span class="keyword">this</span>.$emit(<span class="string">"input"</span>, <span class="keyword">this</span>.inputValue);</span><br><span class="line">      <span class="comment">// 通知父组件校验</span></span><br><span class="line">      <span class="comment">// tip: 不自己校验是因为</span></span><br><span class="line">      <span class="comment">// form整体校验的时候，并不一定就是input，还可能会是复杂组件</span></span><br><span class="line">      <span class="comment">// 因此在formitem层级进行校验</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 方法一：错误</span></span><br><span class="line">      <span class="comment">//   this.$emit("validate", this.inputValue);</span></span><br><span class="line">      <span class="comment">// 因为input以插槽的形式插入formitem中，并不能直接$emit</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 方法二：当用户不按既定层级编写代码时，$parent不是formitem,因此不完善</span></span><br><span class="line">      <span class="keyword">this</span>.$parent.$emit(<span class="string">"validate"</span>, <span class="keyword">this</span>.inputValue);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="Async-validate"><a href="#Async-validate" class="headerlink" title="Async-validate"></a>Async-validate</h2><p>单个表单的校验<code>async-validate</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 验证单个formitem</span></span><br><span class="line">    validate() &#123;</span><br><span class="line">      <span class="comment">// promise作用为 在整体校验时提供状态</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 校验规则</span></span><br><span class="line">        <span class="keyword">const</span> descriptor = &#123;</span><br><span class="line">          <span class="comment">// 此处this.form为父组件provider提供</span></span><br><span class="line">          [<span class="keyword">this</span>.prop]: <span class="keyword">this</span>.form.rules[<span class="keyword">this</span>.prop]</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">const</span> validator = <span class="keyword">new</span> schema(descriptor);</span><br><span class="line">        <span class="comment">// 执行校验</span></span><br><span class="line">        <span class="comment">// 校验参数 param</span></span><br><span class="line">        <span class="comment">// &#123; prop : propValue&#125;  propValue由父组件的provider</span></span><br><span class="line">          <span class="keyword">this</span>.form.model[<span class="keyword">this</span>.prop] &#125;);</span><br><span class="line"></span><br><span class="line">        validator.validate(</span><br><span class="line">          &#123; [<span class="keyword">this</span>.prop]: <span class="keyword">this</span>.form.model[<span class="keyword">this</span>.prop] &#125;,</span><br><span class="line">          errors =&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (errors) &#123;</span><br><span class="line">              <span class="keyword">this</span>.isError = <span class="literal">true</span>;</span><br><span class="line">              <span class="keyword">this</span>.errormsg = errors[<span class="number">0</span>].message;</span><br><span class="line">              res(<span class="literal">false</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="keyword">this</span>.isError = <span class="literal">false</span>;</span><br><span class="line">              <span class="keyword">this</span>.errormsg = <span class="string">""</span>;</span><br><span class="line">              res(<span class="literal">true</span>);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        );</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>TIPS:</p>
+<ul>
+<li>别忘了引入<code>async-validate</code></li>
+<li><code>Validate</code>以<code>promise</code>返回，供表单整体校验时提供异步等待机制<h2 id="整体校验"><a href="#整体校验" class="headerlink" title="整体校验"></a>整体校验</h2></li>
+<li>缓存需要校验的表单项，有些没有<code>prop</code>的不需要校验</li>
+<li>使用<code>async await</code>和<code>Promise.all</code>进行整体校验判断<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    created() &#123;</span><br><span class="line">    <span class="comment">// 缓存需要校验的表单项</span></span><br><span class="line">    <span class="keyword">this</span>.fields = [];</span><br><span class="line">    <span class="keyword">this</span>.$on(<span class="string">"formItemAdd"</span>, item =&gt; <span class="keyword">this</span>.fields.push(item));</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="comment">// 回调</span></span><br><span class="line">    <span class="comment">// 验证所有formitem</span></span><br><span class="line">    <span class="keyword">async</span> validate(callback) &#123;</span><br><span class="line">      <span class="keyword">const</span> tasks = <span class="keyword">this</span>.fields.map(<span class="function"><span class="params">item</span> =&gt;</span> item.validate());</span><br><span class="line">      <span class="keyword">const</span> results = <span class="keyword">await</span> <span class="built_in">Promise</span>.all(tasks);</span><br><span class="line">      <span class="keyword">let</span> flag = results.filter(<span class="function"><span class="params">valid</span> =&gt;</span> valid == <span class="literal">false</span>).length == <span class="number">0</span>;</span><br><span class="line">      callback(flag);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="自定义组件命名"><a href="#自定义组件命名" class="headerlink" title="自定义组件命名"></a>自定义组件命名</h2><p><strong>注意：自定义组件name属性不要和已安装的UI组件的标签名称一致，渲染时会报堆栈溢出，找了半天bug😭。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123; </span><br><span class="line">  name: “el-form”     <span class="comment">// 不要取element-ui一样的名称 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fullstack/">Fullstack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-Fullstack-lesson1"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -220,7 +309,10 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="VUE-CLI-3与VUE-CLI-2-的区别"><a href="#VUE-CLI-3与VUE-CLI-2-的区别" class="headerlink" title="VUE-CLI 3与VUE-CLI 2 的区别"></a>VUE-CLI 3与VUE-CLI 2 的区别</h2><ul>
+        <blockquote>
+<p>本文为自己学习笔记，而不是一篇教程，仅供自己日后回顾使用<br>但若其中某tip能为你提供些许帮助，你可以在心里为我撒个花花🌹(<em>^__^</em>) </p>
+</blockquote>
+<h2 id="VUE-CLI-3与VUE-CLI-2-的区别"><a href="#VUE-CLI-3与VUE-CLI-2-的区别" class="headerlink" title="VUE-CLI 3与VUE-CLI 2 的区别"></a>VUE-CLI 3与VUE-CLI 2 的区别</h2><ul>
 <li>npm安装依赖名称变更 @vue/cli</li>
 <li>CLI2中的<code>cofig</code>文件夹取消，变更为使用在根目录下创建<code>vue.config.js</code>文件来进行配置</li>
 <li>CLI3实例化方式有区别，如下： <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CLI2</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  template: <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line">  components: &#123; App &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// CLI3</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App), <span class="comment">// 渲染App组件供$mount挂载</span></span><br><span class="line">&#125;).$mount(<span class="string">'#app'</span>)   <span class="comment">// 将render出的App组件挂载到DOM#app上</span></span><br></pre></td></tr></table></figure>
@@ -250,7 +342,7 @@
       
       
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fullstack/">Fullstack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
 
       
 
@@ -517,55 +609,8 @@
       
       
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/滑动/">滑动</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/边框/">边框</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
 
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-vue-js"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/01/12/vue-js/">vue.js</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2018/01/12/vue-js/" class="article-date">
-	  <time datetime="2018-01-12T03:53:59.000Z" itemprop="datePublished">2018-01-12</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-        
       
 
     </footer>
@@ -672,7 +717,7 @@
 <h2 id="关于收费"><a href="#关于收费" class="headerlink" title="关于收费"></a>关于收费</h2><p><strong>马克飞象</strong>为新用户提供 10 天的试用期，试用期过后需要<a href="maxiang.info/vip.html">续费</a>才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。</p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2788354117" target="_blank" rel="noopener">@马克飞象</a>，<a href="http://weibo.com/ggock" title="开发者个人账号" target="_blank" rel="noopener">@GGock</a></li>
-<li>邮箱：<a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#104;&#x75;&#115;&#116;&#103;&#x6f;&#99;&#x6b;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#104;&#x75;&#115;&#116;&#103;&#x6f;&#99;&#x6b;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></li>
+<li>邮箱：<a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#104;&#x75;&#115;&#116;&#103;&#111;&#99;&#107;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#104;&#x75;&#115;&#116;&#103;&#111;&#99;&#107;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;</a></li>
 </ul>
 <hr>
 <p>感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</p>
@@ -686,62 +731,8 @@
       
       
         
-      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-hello-world"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/01/12/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2018/01/12/hello-world/" class="article-date">
-	  <time datetime="2018-01-12T03:12:55.000Z" itemprop="datePublished">2018-01-12</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-        
       
 
     </footer>

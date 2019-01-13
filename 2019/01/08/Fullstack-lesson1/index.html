@@ -11,18 +11,18 @@
   
   
   
-  <meta name="description" content="VUE-CLI 3与VUE-CLI 2 的区别 npm安装依赖名称变更 @vue/cli CLI2中的cofig文件夹取消，变更为使用在根目录下创建vue.config.js文件来进行配置 CLI3实例化方式有区别，如下： 1234567891011// CLI2new Vue(&amp;#123;  el: &apos;#app&apos;,  template: &apos;&amp;lt;App/&amp;gt;&apos;,  components:">
-<meta name="keywords" content="VUE">
+  <meta name="description" content="本文为自己学习笔记，而不是一篇教程，仅供自己日后回顾使用但若其中某tip能为你提供些许帮助，你可以在心里为我撒个花花🌹(^__^)   VUE-CLI 3与VUE-CLI 2 的区别 npm安装依赖名称变更 @vue/cli CLI2中的cofig文件夹取消，变更为使用在根目录下创建vue.config.js文件来进行配置 CLI3实例化方式有区别，如下： 1234567891011// CL">
+<meta name="keywords" content="VUE,Fullstack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fullstack lesson1">
 <meta property="og:url" content="http://yihui37.github.io/2019/01/08/Fullstack-lesson1/index.html">
 <meta property="og:site_name" content="一丶回">
-<meta property="og:description" content="VUE-CLI 3与VUE-CLI 2 的区别 npm安装依赖名称变更 @vue/cli CLI2中的cofig文件夹取消，变更为使用在根目录下创建vue.config.js文件来进行配置 CLI3实例化方式有区别，如下： 1234567891011// CLI2new Vue(&amp;#123;  el: &apos;#app&apos;,  template: &apos;&amp;lt;App/&amp;gt;&apos;,  components:">
+<meta property="og:description" content="本文为自己学习笔记，而不是一篇教程，仅供自己日后回顾使用但若其中某tip能为你提供些许帮助，你可以在心里为我撒个花花🌹(^__^)   VUE-CLI 3与VUE-CLI 2 的区别 npm安装依赖名称变更 @vue/cli CLI2中的cofig文件夹取消，变更为使用在根目录下创建vue.config.js文件来进行配置 CLI3实例化方式有区别，如下： 1234567891011// CL">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2019-01-08T15:00:16.210Z">
+<meta property="og:updated_time" content="2019-01-13T12:12:01.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fullstack lesson1">
-<meta name="twitter:description" content="VUE-CLI 3与VUE-CLI 2 的区别 npm安装依赖名称变更 @vue/cli CLI2中的cofig文件夹取消，变更为使用在根目录下创建vue.config.js文件来进行配置 CLI3实例化方式有区别，如下： 1234567891011// CLI2new Vue(&amp;#123;  el: &apos;#app&apos;,  template: &apos;&amp;lt;App/&amp;gt;&apos;,  components:">
+<meta name="twitter:description" content="本文为自己学习笔记，而不是一篇教程，仅供自己日后回顾使用但若其中某tip能为你提供些许帮助，你可以在心里为我撒个花花🌹(^__^)   VUE-CLI 3与VUE-CLI 2 的区别 npm安装依赖名称变更 @vue/cli CLI2中的cofig文件夹取消，变更为使用在根目录下创建vue.config.js文件来进行配置 CLI3实例化方式有区别，如下： 1234567891011// CL">
   
     <link rel="alternate" href="/atom.xml" title="一丶回" type="application/atom+xml">
   
@@ -195,7 +195,10 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="VUE-CLI-3与VUE-CLI-2-的区别"><a href="#VUE-CLI-3与VUE-CLI-2-的区别" class="headerlink" title="VUE-CLI 3与VUE-CLI 2 的区别"></a>VUE-CLI 3与VUE-CLI 2 的区别</h2><ul>
+        <blockquote>
+<p>本文为自己学习笔记，而不是一篇教程，仅供自己日后回顾使用<br>但若其中某tip能为你提供些许帮助，你可以在心里为我撒个花花🌹(<em>^__^</em>) </p>
+</blockquote>
+<h2 id="VUE-CLI-3与VUE-CLI-2-的区别"><a href="#VUE-CLI-3与VUE-CLI-2-的区别" class="headerlink" title="VUE-CLI 3与VUE-CLI 2 的区别"></a>VUE-CLI 3与VUE-CLI 2 的区别</h2><ul>
 <li>npm安装依赖名称变更 @vue/cli</li>
 <li>CLI2中的<code>cofig</code>文件夹取消，变更为使用在根目录下创建<code>vue.config.js</code>文件来进行配置</li>
 <li>CLI3实例化方式有区别，如下： <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CLI2</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  template: <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line">  components: &#123; App &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// CLI3</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App), <span class="comment">// 渲染App组件供$mount挂载</span></span><br><span class="line">&#125;).$mount(<span class="string">'#app'</span>)   <span class="comment">// 将render出的App组件挂载到DOM#app上</span></span><br></pre></td></tr></table></figure>
@@ -269,7 +272,7 @@
       
       
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fullstack/">Fullstack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
 
       
 
@@ -278,6 +281,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/01/13/Fullstack-lesson2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          Fullstack lesson2
+        
+      </div>
+    </a>
   
   
     <a href="/2018/07/26/Element-UI组件回调自定义传参/" id="article-nav-older" class="article-nav-link-wrap">

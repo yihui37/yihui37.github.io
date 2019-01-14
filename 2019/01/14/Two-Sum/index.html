@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>element-ui 自定义参数传递 | 一丶回</title>
+  <title>two sum | 一丶回</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YIHUI" />
@@ -11,18 +11,18 @@
   
   
   
-  <meta name="description" content="本文主要讲述Element-UI中组件事件回调如何在保留默认传参的情况下，额外传递自定义参数。  Element-UI框架中的组件事件回调传参一般只有v-model的绑定值，然而在实际开发过程中，经常会遇到既需要绑定值，也需要其他参数（尤以循环数组需要当前对象和index居多）的情况。在项目搭建伊始，这个问题就在困扰着我，当时的解决方法尤其笨拙：  在绑定组件上添加click事件，将自定义参数通">
-<meta name="keywords" content="VUE,Element-UI,Javascript">
+  <meta name="description" content="Two Sum 本文为LeetCode刷题系列笔记，你可以在这里找到我的项目代码实际运行  QuestionGiven an array of integers, return indices of the two numbers such that they add up to a specific target.  You may assume that each input would ha">
+<meta name="keywords" content="LeetCode,Array,Hash,每天进步一点点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Element-UI 自定义参数传递">
-<meta property="og:url" content="http://yihui37.github.io/2018/07/26/Element-UI组件回调自定义传参/index.html">
+<meta property="og:title" content="Two Sum">
+<meta property="og:url" content="http://yihui37.github.io/2019/01/14/Two-Sum/index.html">
 <meta property="og:site_name" content="一丶回">
-<meta property="og:description" content="本文主要讲述Element-UI中组件事件回调如何在保留默认传参的情况下，额外传递自定义参数。  Element-UI框架中的组件事件回调传参一般只有v-model的绑定值，然而在实际开发过程中，经常会遇到既需要绑定值，也需要其他参数（尤以循环数组需要当前对象和index居多）的情况。在项目搭建伊始，这个问题就在困扰着我，当时的解决方法尤其笨拙：  在绑定组件上添加click事件，将自定义参数通">
+<meta property="og:description" content="Two Sum 本文为LeetCode刷题系列笔记，你可以在这里找到我的项目代码实际运行  QuestionGiven an array of integers, return indices of the two numbers such that they add up to a specific target.  You may assume that each input would ha">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2019-01-13T12:12:22.143Z">
+<meta property="og:updated_time" content="2019-01-14T13:40:39.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Element-UI 自定义参数传递">
-<meta name="twitter:description" content="本文主要讲述Element-UI中组件事件回调如何在保留默认传参的情况下，额外传递自定义参数。  Element-UI框架中的组件事件回调传参一般只有v-model的绑定值，然而在实际开发过程中，经常会遇到既需要绑定值，也需要其他参数（尤以循环数组需要当前对象和index居多）的情况。在项目搭建伊始，这个问题就在困扰着我，当时的解决方法尤其笨拙：  在绑定组件上添加click事件，将自定义参数通">
+<meta name="twitter:title" content="Two Sum">
+<meta name="twitter:description" content="Two Sum 本文为LeetCode刷题系列笔记，你可以在这里找到我的项目代码实际运行  QuestionGiven an array of integers, return indices of the two numbers such that they add up to a specific target.  You may assume that each input would ha">
   
     <link rel="alternate" href="/atom.xml" title="一丶回" type="application/atom+xml">
   
@@ -160,7 +160,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Element-UI组件回调自定义传参" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Two-Sum" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -168,7 +168,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Element-UI 自定义参数传递
+      Two Sum
     </h1>
   
 
@@ -176,12 +176,12 @@
     
     <div class="article-meta">
       
-	<a href="/2018/07/26/Element-UI组件回调自定义传参/" class="article-date">
-	  <time datetime="2018-07-26T08:46:26.000Z" itemprop="datePublished">2018-07-26</time>
+	<a href="/2019/01/14/Two-Sum/" class="article-date">
+	  <time datetime="2019-01-14T13:39:35.000Z" itemprop="datePublished">2019-01-14</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Element-UI/">Element-UI</a>
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
 
       
 	<a class="article-views">
@@ -195,20 +195,20 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>本文主要讲述Element-UI中组件事件回调如何在保留默认传参的情况下，额外传递自定义参数。</p>
+        <h1 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h1><blockquote>
+<p>本文为LeetCode刷题系列笔记，你可以在<a href="https://github.com/yihui37/leetcode" target="_blank" rel="noopener">这里</a>找到我的项目代码实际运行</p>
 </blockquote>
-<p>Element-UI框架中的组件事件回调传参一般只有<code>v-model</code>的绑定值，然而在实际开发过程中，经常会遇到既需要绑定值，也需要其他参数（尤以循环数组需要当前对象和index居多）的情况。<br>在项目搭建伊始，这个问题就在困扰着我，当时的解决方法尤其笨拙：</p>
-<ul>
-<li><strong>在绑定组件上添加click事件，将自定义参数通过click事件绑定到全局变量中，之后通过全局变量来确定当前变更元素。</strong><br><em>此方法一是需要确保click事件比组件的change事件优先执行；二是新增了变量就意味着占据内存来存储一个既有值；三是一不小心就会忘了当前存储值是什么，需要不断log调试</em></li>
-</ul>
-<p>这个笨拙的方法虽然解决了问题，却有一种问我9✖️9等于多少，我只能用9+9+9+9+9+9+9+9+9=81累加方法算出答案，一直觉得麻烦，却不知道好方法的感觉。</p>
-<p>当然，如今我终于习得99乘法表。</p>
-<ul>
-<li><strong>使用闭包重新包装回调函数  </strong></li>
-<li><strong><code>@change=&quot;selectValue=&gt;handleChange(selectValue,index)&quot;</code></strong><br><em>此方法简单高效，直接解决了困扰已久的问题，激动无以言表</em></li>
-</ul>
-<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>有一组数据selectedRepos，其中每个元素都需要通过远程搜索获取到可选列表再进行选择，同时将搜索结果作为属性值保存在当前元素中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div class=&quot;repoWrap&quot; v-for=&quot;(repo,index) of selectedRepos&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">		&lt;el-select </span><br><span class="line">			:ref=&quot;`repoSelect$&#123;index&#125;`&quot;</span><br><span class="line">			v-model=&quot;repo.id&quot; </span><br><span class="line">            remote </span><br><span class="line">            // 远程搜索，既需要查询条件query，也需要当前数组元素repo</span><br><span class="line">            :remote-method=&quot;query=&gt;remoteSearch(query,repo)&quot; </span><br><span class="line">            @change=&quot;selectRepo(repo)&quot; </span><br><span class="line">            :loading=&quot;remote_loading&quot;</span><br><span class="line">            value-key=&quot;repo_info.id&quot;&gt;</span><br><span class="line">			    &lt;el-option </span><br><span class="line">				    v-for=&quot;repo in repo.repoOptions&quot; </span><br><span class="line">				    :key=&quot;repo.id&quot; </span><br><span class="line">				    :label=&quot;repo.repo_name&quot; </span><br><span class="line">				    :value=&quot;repo&quot;&gt;</span><br><span class="line">	            &lt;/el-option&gt;</span><br><span class="line">        &lt;/el-select&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">	</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    methods:&#123;</span><br><span class="line">	    remoteSearch(query,repo)&#123;</span><br><span class="line">		    ...</span><br><span class="line">	    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target. </p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<p><strong>Example:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</span><br><span class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</span><br><span class="line"><span class="keyword">return</span> [<span class="number">0</span>, <span class="number">1</span>].</span><br></pre></td></tr></table></figure></p>
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h4 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h4><p>我的第一次解题思路，使用<code>嵌套的for循环</code>来试两个数组元素相加并与<code>target</code>进行比较，相等则退出循环，并返回元素序列数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">submit(array, target) &#123;</span><br><span class="line">  <span class="keyword">let</span> hash = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> [findex, i] <span class="keyword">of</span> nums.entries()) &#123;</span><br><span class="line">    <span class="keyword">if</span> (hash[target - i] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> [hash[target - i], findex];</span><br><span class="line">    &#125;</span><br><span class="line">    hash[i] = findex;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>提交后发现耗费了<strong>1025ms</strong>，仅超越了<strong>2.5%</strong> 的提交记录，大受打击&gt;.&lt; 原来自己的方法是非常落后的。</p>
+<h4 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h4><p>后来在左侧的问题标签中发现有<code>hash</code>的标签，因此有了思路：将数组元素与其序列存在一个对象中，用查找对象的方式来判断符合条件，具体如下。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">submit(array, target) &#123;</span><br><span class="line">  <span class="keyword">let</span> hash = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> [index, value] <span class="keyword">of</span> nums.entries()) &#123;</span><br><span class="line">    <span class="keyword">if</span> (hash[target - value] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> [hash[target - value], index];</span><br><span class="line">    &#125;</span><br><span class="line">    hash[value] = index;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这次提交后检测耗费<strong>80ms</strong>，超越了<strong>59.88%</strong>，意味着还有更优的解法。</p>
+<h4 id="解法三"><a href="#解法三" class="headerlink" title="解法三"></a>解法三</h4><p>解法二中使用ES6数组的扩展<code>.entries()</code>来遍历数组，之前没有比较过和<code>for循环</code>的性能，这次改为<code>for循环</code>试一下。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">submit(array, target) &#123;</span><br><span class="line">  <span class="keyword">let</span> hash = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (hash[target - nums[i]] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> [hash[target - nums[i]], i];</span><br><span class="line">    &#125;</span><br><span class="line">    hash[nums[i]] = i;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这次提交检测耗费<strong>72ms</strong>，超越了<strong>69.95%</strong> ，还不是最优解。</p>
+<p>但是自己完全没有头绪了，因此到<code>LeetCode</code>上看了<code>Discuss</code>，发现有许多标题100%的解法与方法二三的思路是一样的，只是写法不太一样，而且复制提交测试后依然是<strong>72ms</strong>,并没有任何提升，不知道是什么原因=-=。</p>
+<p>后续有好的方法再贴吧~</p>
 
       
     </div>
@@ -222,7 +222,7 @@
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2018/07/26/Element-UI组件回调自定义传参/" target="_blank" title="Element-UI 自定义参数传递">http://yihui37.github.io/2018/07/26/Element-UI组件回调自定义传参/</a>
+          <a href="/2019/01/14/Two-Sum/" target="_blank" title="Two Sum">http://yihui37.github.io/2019/01/14/Two-Sum/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -268,19 +268,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/01/08/Fullstack-lesson1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          Fullstack lesson1
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/07/16/el-dialog关闭/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/01/13/Fullstack-lesson2/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">Element Dialog append-to-body</div>
+      <div class="article-nav-title">Fullstack lesson2</div>
     </a>
   
 </nav>
@@ -294,7 +285,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Inhalt</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">1.</span> <span class="nav-text">实例</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Two-Sum"><span class="nav-number">1.</span> <span class="nav-text">Two Sum</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法"><span class="nav-number">1.2.</span> <span class="nav-text">解法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解法一"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法二"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">解法二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法三"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">解法三</span></a></li></ol></li></ol></li></ol></li></ol>
     
     </div>
   </aside>

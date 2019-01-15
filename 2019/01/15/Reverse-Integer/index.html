@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>two sum | 一丶回</title>
+  <title>reverse integer | 一丶回</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YIHUI" />
@@ -11,18 +11,18 @@
   
   
   
-  <meta name="description" content="Two Sum 本文为LeetCode刷题系列笔记，你可以在这里找到我的项目代码实际运行  QuestionGiven an array of integers, return indices of the two numbers such that they add up to a specific target.  You may assume that each input would ha">
-<meta name="keywords" content="LeetCode,Array,Hash,每天进步一点点">
+  <meta name="description" content="Reverse Integer Two Sum本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionGiven a 32-bit signed integer, reverse digits of an integer.Example 1:12Input: 123Output: 321 Example 2:12Input: -123Output: -321">
+<meta name="keywords" content="LeetCode,每天进步一点点,Math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Two Sum">
-<meta property="og:url" content="http://yihui37.github.io/2019/01/14/Two-Sum/index.html">
+<meta property="og:title" content="Reverse Integer">
+<meta property="og:url" content="http://yihui37.github.io/2019/01/15/Reverse-Integer/index.html">
 <meta property="og:site_name" content="一丶回">
-<meta property="og:description" content="Two Sum 本文为LeetCode刷题系列笔记，你可以在这里找到我的项目代码实际运行  QuestionGiven an array of integers, return indices of the two numbers such that they add up to a specific target.  You may assume that each input would ha">
+<meta property="og:description" content="Reverse Integer Two Sum本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionGiven a 32-bit signed integer, reverse digits of an integer.Example 1:12Input: 123Output: 321 Example 2:12Input: -123Output: -321">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2019-01-14T13:40:39.610Z">
+<meta property="og:updated_time" content="2019-01-15T14:52:45.744Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Two Sum">
-<meta name="twitter:description" content="Two Sum 本文为LeetCode刷题系列笔记，你可以在这里找到我的项目代码实际运行  QuestionGiven an array of integers, return indices of the two numbers such that they add up to a specific target.  You may assume that each input would ha">
+<meta name="twitter:title" content="Reverse Integer">
+<meta name="twitter:description" content="Reverse Integer Two Sum本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionGiven a 32-bit signed integer, reverse digits of an integer.Example 1:12Input: 123Output: 321 Example 2:12Input: -123Output: -321">
   
     <link rel="alternate" href="/atom.xml" title="一丶回" type="application/atom+xml">
   
@@ -160,7 +160,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Two-Sum" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Reverse-Integer" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -168,7 +168,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Two Sum
+      Reverse Integer
     </h1>
   
 
@@ -176,8 +176,8 @@
     
     <div class="article-meta">
       
-	<a href="/2019/01/14/Two-Sum/" class="article-date">
-	  <time datetime="2019-01-14T13:39:35.000Z" itemprop="datePublished">2019-01-14</time>
+	<a href="/2019/01/15/Reverse-Integer/" class="article-date">
+	  <time datetime="2019-01-15T14:51:00.000Z" itemprop="datePublished">2019-01-15</time>
 	</a>
 
       
@@ -195,20 +195,19 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h1><blockquote>
-<p>本文为LeetCode刷题系列笔记，你可以在<a href="https://github.com/yihui37/leetcode" target="_blank" rel="noopener">这里</a>找到我的项目代码实际运行</p>
+        <h1 id="Reverse-Integer"><a href="#Reverse-Integer" class="headerlink" title="Reverse Integer"></a>Reverse Integer</h1><blockquote>
+<p>Two Sum本文为LeetCode刷题系列笔记，你可以在 <a href="https://github.com/yihui37/leetcode" target="_blank" rel="noopener">这里</a> 找到我的项目代码实际运行</p>
 </blockquote>
-<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target. </p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
-<p><strong>Example:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Given nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</span><br><span class="line">Because nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</span><br><span class="line"><span class="keyword">return</span> [<span class="number">0</span>, <span class="number">1</span>].</span><br></pre></td></tr></table></figure></p>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h4 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h4><p>我的第一次解题思路，使用<code>嵌套的for循环</code>来试两个数组元素相加并与<code>target</code>进行比较，相等则退出循环，并返回元素序列数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">submit(array, target) &#123;</span><br><span class="line">  <span class="keyword">let</span> hash = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> [findex, i] <span class="keyword">of</span> nums.entries()) &#123;</span><br><span class="line">    <span class="keyword">if</span> (hash[target - i] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> [hash[target - i], findex];</span><br><span class="line">    &#125;</span><br><span class="line">    hash[i] = findex;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>提交后发现耗费了<strong>1025ms</strong>，仅超越了<strong>2.5%</strong> 的提交记录，大受打击&gt;.&lt; 原来自己的方法是非常落后的。</p>
-<h4 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h4><p>后来在左侧的问题标签中发现有<code>hash</code>的标签，因此有了思路：将数组元素与其序列存在一个对象中，用查找对象的方式来判断符合条件，具体如下。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">submit(array, target) &#123;</span><br><span class="line">  <span class="keyword">let</span> hash = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> [index, value] <span class="keyword">of</span> nums.entries()) &#123;</span><br><span class="line">    <span class="keyword">if</span> (hash[target - value] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> [hash[target - value], index];</span><br><span class="line">    &#125;</span><br><span class="line">    hash[value] = index;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这次提交后检测耗费<strong>80ms</strong>，超越了<strong>59.88%</strong>，意味着还有更优的解法。</p>
-<h4 id="解法三"><a href="#解法三" class="headerlink" title="解法三"></a>解法三</h4><p>解法二中使用ES6数组的扩展<code>.entries()</code>来遍历数组，之前没有比较过和<code>for循环</code>的性能，这次改为<code>for循环</code>试一下。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">submit(array, target) &#123;</span><br><span class="line">  <span class="keyword">let</span> hash = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (hash[target - nums[i]] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> [hash[target - nums[i]], i];</span><br><span class="line">    &#125;</span><br><span class="line">    hash[nums[i]] = i;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这次提交检测耗费<strong>72ms</strong>，超越了<strong>69.95%</strong> ，还不是最优解。</p>
-<p>但是自己完全没有头绪了，因此到<code>LeetCode</code>上看了<code>Discuss</code>，发现有许多标题100%的解法与方法二三的思路是一样的，只是写法不太一样，而且复制提交测试后依然是<strong>72ms</strong>,并没有任何提升，不知道是什么原因=-=。</p>
-<p>后续有好的方法再贴吧~</p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a 32-bit signed integer, reverse digits of an integer.<br><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 123</span><br><span class="line">Output: 321</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: -123</span><br><span class="line">Output: -321</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 120</span><br><span class="line">Output: 21</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong><br>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p>
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h3><p>我的第一次解题思路，第一反应是数组有一个倒序的方法，即<code>Array.reverse()</code>，因此有了<code>Number-&gt;String-&gt;Array-&gt;Array.reverse()-&gt;String-&gt;Number</code>的思路。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">submit(x) &#123;</span><br><span class="line">  <span class="keyword">let</span> sign = x &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">-1</span>; <span class="comment">// 正负号</span></span><br><span class="line">  <span class="keyword">let</span> num = <span class="built_in">Math</span>.abs(x); <span class="comment">// 绝对值</span></span><br><span class="line">  <span class="keyword">let</span> reverse = <span class="built_in">Number</span>(num.toString().split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)) * sign; <span class="comment">// 倒序转换</span></span><br><span class="line">  <span class="keyword">if</span>(reverse&gt;<span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">31</span>)<span class="number">-1</span> || reverse &lt; <span class="built_in">Math</span>.pow(<span class="number">-2</span>,<span class="number">31</span>))         reverse = <span class="number">0</span>; <span class="comment">// 判断32位数值区间</span></span><br><span class="line">  <span class="keyword">return</span> reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>提交后发现耗费了<strong>96ms</strong>，超越了<strong>31.72%</strong> 。 </p>
+<h3 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h3><p>后来想到会不会是因为转换太多了比较消耗性能，于是尝试了一下使用全<code>Number</code>，依照个十百位依次取值的方式，具体如下。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">submit(array, target) &#123;</span><br><span class="line">  <span class="keyword">let</span> reverse = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (x) &#123;</span><br><span class="line">    reverse = reverse*<span class="number">10</span> + x % <span class="number">10</span>;            </span><br><span class="line">    x = <span class="built_in">parseInt</span>(x/<span class="number">10</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (reverse &gt; <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">31</span>) - <span class="number">1</span> || reverse &lt;  <span class="built_in">Math</span>.pow(<span class="number">-2</span>, <span class="number">31</span>)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这次提交后检测耗费<strong>92ms</strong>，超越了<strong>35.76%</strong></p>
+<p>由此怀疑<code>LeetCode</code>的测速是不是有其他因素影响，去搜了一下发现这个测速不准，同样的代码可能会测出差别较大的结果，因此我又去<code>LeetCode</code>上的<code>Submissions</code>中查看了耗时最少<strong>68ms</strong>的解答，发现测试出来还是<strong>92ms</strong>。</p>
+<p>Emmmmm，后续应该不会追求这个百分比了。ㄟ( ▔, ▔ )ㄏ</p>
 
       
     </div>
@@ -222,7 +221,7 @@
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2019/01/14/Two-Sum/" target="_blank" title="Two Sum">http://yihui37.github.io/2019/01/14/Two-Sum/</a>
+          <a href="/2019/01/15/Reverse-Integer/" target="_blank" title="Reverse Integer">http://yihui37.github.io/2019/01/15/Reverse-Integer/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -268,19 +267,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/01/15/Reverse-Integer/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          Reverse Integer
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/13/Fullstack-lesson2/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/01/14/Two-Sum/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">Fullstack lesson2</div>
+      <div class="article-nav-title">Two Sum</div>
     </a>
   
 </nav>
@@ -294,7 +284,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Inhalt</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Two-Sum"><span class="nav-number">1.</span> <span class="nav-text">Two Sum</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法"><span class="nav-number">1.2.</span> <span class="nav-text">解法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解法一"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法二"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">解法二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法三"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">解法三</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Reverse-Integer"><span class="nav-number">1.</span> <span class="nav-text">Reverse Integer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法"><span class="nav-number">1.2.</span> <span class="nav-text">解法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解法一"><span class="nav-number">1.2.1.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法二"><span class="nav-number">1.2.2.</span> <span class="nav-text">解法二</span></a></li></ol></li></ol></li></ol>
     
     </div>
   </aside>

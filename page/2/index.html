@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>一丶回</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="YIHUI" />
+  
+  
+  
+  
+  <meta name="description" content="前端打怪记录&amp;诗与远方，一些日常学习的心得，或是好的文章分享，工作爬坑记录等，或许还会放一些日常生活(*^__^*) 嘻嘻……">
+<meta property="og:type" content="website">
+<meta property="og:title" content="一丶回">
+<meta property="og:url" content="http://yihui37.github.io/page/2/index.html">
+<meta property="og:site_name" content="一丶回">
+<meta property="og:description" content="前端打怪记录&amp;诗与远方，一些日常学习的心得，或是好的文章分享，工作爬坑记录等，或许还会放一些日常生活(*^__^*) 嘻嘻……">
+<meta property="og:locale" content="Chinese">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一丶回">
+<meta name="twitter:description" content="前端打怪记录&amp;诗与远方，一些日常学习的心得，或是好的文章分享，工作爬坑记录等，或许还会放一些日常生活(*^__^*) 嘻嘻……">
+  
+    <link rel="alternate" href="/atom.xml" title="一丶回" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/logo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/logo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/home.css" >
+  
+
+  
+
+  
+
+  
+  
+  
+
+</head>
+
+
+
+  <body>
+
+
+  
+    <header id="header">
+
+	<!-- 背景图模式 -->
+	
+
+    
+      <div id="intrologo" class="intro-logo">
+    
+ 
+
+
+    <canvas width="100%" height="100%"></canvas>
+    <script>
+      var c = document.getElementsByTagName('canvas')[0],
+          x = c.getContext('2d'),
+          w = window.innerWidth,
+          h = window.innerHeight,
+          pr = window.devicePixelRatio || 1,
+          f = 90,
+          q,
+          m = Math,
+          r = 0,
+          u = m.PI*2,
+          v = m.cos,
+          z = m.random
+      c.width = w*pr
+      c.height = h*pr
+      x.scale(pr, pr)
+      x.globalAlpha = 0.6
+
+      <!-- 折线Polyline背景 -->
+      
+        function i(){
+            x.clearRect(0,0,w,h)
+            q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
+            while(q[1].x<w+f) d(q[0], q[1])
+        }
+        function d(i,j){   
+            x.beginPath()
+            x.moveTo(i.x, i.y)
+            x.lineTo(j.x, j.y)
+            var k = j.x + (z()*2-0.25)*f,
+                n = y(j.y)
+            x.lineTo(k, n)
+            x.closePath()
+            r-=u/-50
+            x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
+            x.fill()
+            q[0] = q[1]
+            q[1] = {x:k,y:n}
+        }
+        function y(p){
+            var t = p + (z()*2-1.1)*f
+            return (t>h||t<0) ? y(p) : t
+        }
+        document.getElementById("intrologo").onclick = i
+        document.getElementById("intrologo").ontouchstart = i
+        i()
+
+      <!-- 多边形trianglify背景 -->
+      
+    </script>
+    
+
+    
+      <div id="homelogo" class="homelogo"> 
+    
+
+        
+          <div class="homelogoback" >
+            <h1><a href="#content" id="logo">一丶回</a></h1>
+            <h3>前端打怪记录&amp;诗与远方，一些日常学习的心得，或是好的文章分享，工作爬坑记录等，或许还会放一些日常生活(*^__^*) 嘻嘻……</h3>
+            <h5>YI HUI</h5>
+            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
+          </div>
+        
+    
+    </div>
+  </div>
+
+  <!-- 自适应主页背景大图 -->
+  
+
+ <!-- home_logo_image居中 -->
+ 
+    <script>
+        var homelogodiv = document.getElementById("homelogo");
+        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
+          homelogodiv.style.width = document.body.clientWidth + "px";
+          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
+        } else {
+          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
+          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
+        }
+    </script>
+  
+
+  <div class="intro-navigate">
+      <p class="navigater-list">
+        
+          <a id="beautifont" class="main-nav-link" href="/">Startseite</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/archives">Archive</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/categories">Categories</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/tags">Tags</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/about">About</a>
+        
+      </p>
+  </div>
+
+</header>
+  
+  <div id="container">
+    <div id="wrap">
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;">
+  
+    <article id="post-Palindrome-Number"  class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="article-inner">
+                
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/01/16/Palindrome-Number/">Palindrome Number</a>
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+	<a href="/2019/01/16/Palindrome-Number/" class="article-date">
+	  <time datetime="2019-01-16T13:05:23.000Z" itemprop="datePublished">2019-01-16</time>
+	</a>
+
+                                    
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+
+                                        
+                                            
+
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                    <p class="article-excerpt-content">
+                                        
+本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行
+
+QuestionDetermine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+Example 1:12Input: 121Output: true
+Example 2:123Input: -121Output: falseExplanati...
+                                    </p>
+                                    <p class="article-more-link">
+                                        <a href="/2019/01/16/Palindrome-Number/#more">
+                                            More
+                                        </a>
+                                    </p>
+                                    
+                            </div>
+                            <footer class="article-footer">
+                                
+                                            
+                                                        
+                                                                    
+
+                            </footer>
+            </div>
+            
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Reverse-Integer"  class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="article-inner">
+                
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/01/15/Reverse-Integer/">Reverse Integer</a>
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+	<a href="/2019/01/15/Reverse-Integer/" class="article-date">
+	  <time datetime="2019-01-15T03:21:44.000Z" itemprop="datePublished">2019-01-15</time>
+	</a>
+
+                                    
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+
+                                        
+                                            
+
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                    <p class="article-excerpt-content">
+                                        
+本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行反转整数 - LeetCode 阅读
+
+QuestionGiven a 32-bit signed integer, reverse digits of an integer.
+Example 1:12Input: 123Output: 321
+Example 2:12Input: -123Output: -321
+Example 3:12Input: 120Output: 21
+Note:Assume we a...
+                                    </p>
+                                    <p class="article-more-link">
+                                        <a href="/2019/01/15/Reverse-Integer/#more">
+                                            More
+                                        </a>
+                                    </p>
+                                    
+                            </div>
+                            <footer class="article-footer">
+                                
+                                            
+                                                        
+                                                                    
+
+                            </footer>
+            </div>
+            
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Two-Sum"  class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="article-inner">
+                
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/01/14/Two-Sum/">Two Sum</a>
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+	<a href="/2019/01/14/Two-Sum/" class="article-date">
+	  <time datetime="2019-01-14T13:39:35.000Z" itemprop="datePublished">2019-01-14</time>
+	</a>
+
+                                    
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+
+                                        
+                                            
+
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                    <p class="article-excerpt-content">
+                                        
+本文为LeetCode刷题系列笔记，你可以在这里找到我的项目代码实际运行
+
+QuestionGiven an array of integers, return indices of the two numbers such that they add up to a specific target. 
+You may assume that each input would have exactly one solution, and you may not use the same ...
+                                    </p>
+                                    <p class="article-more-link">
+                                        <a href="/2019/01/14/Two-Sum/#more">
+                                            More
+                                        </a>
+                                    </p>
+                                    
+                            </div>
+                            <footer class="article-footer">
+                                
+                                            
+                                                        
+                                                                    
+
+                            </footer>
+            </div>
+            
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Fullstack-lesson2"  class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="article-inner">
+                
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/01/13/Fullstack-lesson2/">Fullstack lesson2</a>
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+	<a href="/2019/01/13/Fullstack-lesson2/" class="article-date">
+	  <time datetime="2019-01-13T12:10:07.000Z" itemprop="datePublished">2019-01-13</time>
+	</a>
+
+                                    
+    <a class="article-category-link" href="/categories/Fullstack/">Fullstack</a>
+
+                                        
+                                            
+
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                    <p class="article-excerpt-content">
+                                        
+本文为自己学习笔记，而不是一篇教程，仅供自己日后回顾使用但若其中某tip能为你提供些许帮助，你可以在心里为我撒个花花🌹(^__^) 
+
+自己写一个el-form参照element-ui自己尝试模拟写了一个el-form的公共组件，实现登录验证功能：
+
+input失去焦点时进行单个验证
+点击登录按钮时整体表单验证
+验证使用async-validate插件完成
+
+组件层级本次登录组件主要由三个组件组成
+
+Form - 最外层表单
+FormItem - 表单项
+Input - 表单数据输入，...
+                                    </p>
+                                    <p class="article-more-link">
+                                        <a href="/2019/01/13/Fullstack-lesson2/#more">
+                                            More
+                                        </a>
+                                    </p>
+                                    
+                            </div>
+                            <footer class="article-footer">
+                                
+                                            
+                                                        
+                                                                    
+
+                            </footer>
+            </div>
+            
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Fullstack-lesson1"  class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="article-inner">
+                
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/01/08/Fullstack-lesson1/">Fullstack lesson1</a>
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+	<a href="/2019/01/08/Fullstack-lesson1/" class="article-date">
+	  <time datetime="2019-01-08T14:58:51.000Z" itemprop="datePublished">2019-01-08</time>
+	</a>
+
+                                    
+    <a class="article-category-link" href="/categories/Fullstack/">Fullstack</a>
+
+                                        
+                                            
+
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                    <p class="article-excerpt-content">
+                                        
+本文为自己学习笔记，而不是一篇教程，仅供自己日后回顾使用但若其中某tip能为你提供些许帮助，你可以在心里为我撒个花花🌹(^__^) 
+
+VUE-CLI 3与VUE-CLI 2 的区别
+npm安装依赖名称变更 @vue/cli
+CLI2中的cofig文件夹取消，变更为使用在根目录下创建vue.config.js文件来进行配置
+CLI3实例化方式有区别，如下： 1234567891011// CLI2new Vue(&#123;  el: '#app',  template: '&lt;A...
+                                    </p>
+                                    <p class="article-more-link">
+                                        <a href="/2019/01/08/Fullstack-lesson1/#more">
+                                            More
+                                        </a>
+                                    </p>
+                                    
+                            </div>
+                            <footer class="article-footer">
+                                
+                                            
+                                                        
+                                                                    
+
+                            </footer>
+            </div>
+            
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Element-UI组件回调自定义传参"  class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="article-inner">
+                
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/07/26/Element-UI组件回调自定义传参/">Element-UI 自定义参数传递</a>
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+	<a href="/2018/07/26/Element-UI组件回调自定义传参/" class="article-date">
+	  <time datetime="2018-07-26T08:46:26.000Z" itemprop="datePublished">2018-07-26</time>
+	</a>
+
+                                    
+    <a class="article-category-link" href="/categories/Element-UI/">Element-UI</a>
+
+                                        
+                                            
+
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                    <p class="article-excerpt-content">
+                                        
+本文主要讲述Element-UI中组件事件回调如何在保留默认传参的情况下，额外传递自定义参数。
+
+Element-UI框架中的组件事件回调传参一般只有v-model的绑定值，然而在实际开发过程中，经常会遇到既需要绑定值，也需要其他参数（尤以循环数组需要当前对象和index居多）的情况。在项目搭建伊始，这个问题就在困扰着我，当时的解决方法尤其笨拙：
+
+在绑定组件上添加click事件，将自定义参数通过click事件绑定到全局变量中，之后通过全局变量来确定当前变更元素。此方法一是需要确保cli...
+                                    </p>
+                                    <p class="article-more-link">
+                                        <a href="/2018/07/26/Element-UI组件回调自定义传参/#more">
+                                            More
+                                        </a>
+                                    </p>
+                                    
+                            </div>
+                            <footer class="article-footer">
+                                
+                                            
+                                                        
+                                                                    
+
+                            </footer>
+            </div>
+            
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-el-dialog关闭"  class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="article-inner">
+                
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/07/16/el-dialog关闭/">Element Dialog append-to-body</a>
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+	<a href="/2018/07/16/el-dialog关闭/" class="article-date">
+	  <time datetime="2018-07-16T07:13:29.000Z" itemprop="datePublished">2018-07-16</time>
+	</a>
+
+                                    
+    <a class="article-category-link" href="/categories/Element-UI/">Element-UI</a>
+
+                                        
+                                            
+
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                    <p class="article-excerpt-content">
+                                        Element Dialog 无法关闭
+
+本文主要介绍Element-UI(VUE)·Dialog的append-to-body属性
+你是否在使用Dialog的过程中，遇到过不能关闭或Dialog Events无效，却不知道如何解决？
+现在让我们一起来看看append-to-body能不能帮助你解决这个问题吧。
+
+Dialog 官方文档 $
+Attributes
+在实际开发过程中，虽然在单个组件中只有一个Dialog，但实际页面中，由于父子组件间的多层嵌套，Dialog也具有了嵌套的关系，...
+                                    </p>
+                                    <p class="article-more-link">
+                                        <a href="/2018/07/16/el-dialog关闭/#more">
+                                            More
+                                        </a>
+                                    </p>
+                                    
+                            </div>
+                            <footer class="article-footer">
+                                
+                                            
+                                                        
+                                                                    
+
+                            </footer>
+            </div>
+            
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-el-select绑定值为对象类型"  class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="article-inner">
+                
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/07/11/el-select绑定值为对象类型/">Element select value-key</a>
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+	<a href="/2018/07/11/el-select绑定值为对象类型/" class="article-date">
+	  <time datetime="2018-07-11T07:13:29.000Z" itemprop="datePublished">2018-07-11</time>
+	</a>
+
+                                    
+    <a class="article-category-link" href="/categories/Element-UI/">Element-UI</a>
+
+                                        
+                                            
+
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                    <p class="article-excerpt-content">
+                                        Element-UI Select 绑定值为Object对象类型
+
+本文主要介绍Element-UI(VUE)·Select的value-key属性
+在使用Element1.0的开发过程中，option的value只能绑定字符串或数字，常常在选择之后再实时根据v-model绑定的值进行数据的筛选，从而获取到object中其它需要的属性数据；
+现在Select对value新增了object数据类型的支持，我们来看看要怎么使用吧。
+
+Select 官方文档 $
+Select Attribute...
+                                    </p>
+                                    <p class="article-more-link">
+                                        <a href="/2018/07/11/el-select绑定值为对象类型/#more">
+                                            More
+                                        </a>
+                                    </p>
+                                    
+                            </div>
+                            <footer class="article-footer">
+                                
+                                            
+                                                        
+                                                                    
+
+                            </footer>
+            </div>
+            
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-css-border滑动动画"  class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="article-inner">
+                
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/02/27/css-border滑动动画/">css-border滑动动画</a>
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+	<a href="/2018/02/27/css-border滑动动画/" class="article-date">
+	  <time datetime="2018-02-27T07:49:51.000Z" itemprop="datePublished">2018-02-27</time>
+	</a>
+
+                                    
+    <a class="article-category-link" href="/categories/CSS奇幻世界/">CSS奇幻世界</a>
+
+                                        
+                                            
+
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                    <p class="article-excerpt-content">
+                                        
+本文主要使用css-transition属性来实现元素边框的流动动画效果
+
+序无意中发现个人主页插件演示页面，在个人履历中看到了边框滑动效果，研究了一下发现是由纯css完成的，由此记录学习一下。在之前学习svg的过程中，实现过不规则图形的边框滑动效果，由于实现方式比较复杂，所以很少在实际项目中使用。
+效果展示移动鼠标到这里查看效果~
+
+原理分析调试分析后发现实际是使用两个同样大小的内外盒子，使用伪类元素::before ::after来模拟边框。一个盒子负责上下边框，另一个负责左右边框。...
+                                    </p>
+                                    <p class="article-more-link">
+                                        <a href="/2018/02/27/css-border滑动动画/#more">
+                                            More
+                                        </a>
+                                    </p>
+                                    
+                            </div>
+                            <footer class="article-footer">
+                                
+                                            
+                                                        
+                                                                    
+
+                            </footer>
+            </div>
+            
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-欢迎使用马克飞象"  class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="article-inner">
+                
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/01/12/欢迎使用马克飞象/">Markdown简介</a>
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+	<a href="/2018/01/12/欢迎使用马克飞象/" class="article-date">
+	  <time datetime="2018-01-12T03:53:59.000Z" itemprop="datePublished">2018-01-12</time>
+	</a>
+
+                                    
+                                        
+                                            
+
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                    <p class="article-excerpt-content">
+                                        Markdown简介
+Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— 维基百科
+
+正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为粗体或者斜体，创建一个链接或一个脚注[^demo]。下面列举了几个高级功能，更多语法请按Ctrl + /查看帮助。
+代码块12345678910@requires_authorizationdef somefunc(param1='', param2=0)...
+                                    </p>
+                                    <p class="article-more-link">
+                                        <a href="/2018/01/12/欢迎使用马克飞象/#more">
+                                            More
+                                        </a>
+                                    </p>
+                                    
+                            </div>
+                            <footer class="article-footer">
+                                
+                                            
+                                                        
+                                                                    
+
+                            </footer>
+            </div>
+            
+</article>
+
+<!-- Table of Contents -->
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+</section>
+        
+      </div>
+      
+        <div align="center" style="margin-top: 30px;"><hr class="hr" style="margin:0px; height:3px;"></div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2018 - 2019 一丶回 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+  <script src="/js/home.js"></script>
+
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            一丶回
+          </div>
+          <div class="panel-body">
+            Copyright © 2019 YI HUI All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+</body>
+</html>

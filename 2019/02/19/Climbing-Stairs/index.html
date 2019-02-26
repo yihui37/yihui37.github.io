@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>element select value-key | 一丶回</title>
+  <title>climbing stairs | 一丶回</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YIHUI" />
@@ -11,22 +11,18 @@
   
   
   
-  <meta name="description" content="Element-UI Select 绑定值为Object对象类型  本文主要介绍Element-UI(VUE)·Select的value-key属性 在使用Element1.0的开发过程中，option的value只能绑定字符串或数字，常常在选择之后再实时根据v-model绑定的值进行数据的筛选，从而获取到object中其它需要的属性数据； 现在Select对value新增了object数据类型的">
-<meta name="keywords" content="VUE,Element-UI,Select">
+  <meta name="description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionYou are climbing a stair case. It takesnsteps to reach to the top.Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb">
+<meta name="keywords" content="LeetCode&#x2F;easy,每天进步一点点,Dynamic Programming">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Element select value-key">
-<meta property="og:url" content="http://yihui37.github.io/2018/07/11/el-select绑定值为对象类型/index.html">
+<meta property="og:title" content="Climbing Stairs">
+<meta property="og:url" content="http://yihui37.github.io/2019/02/19/Climbing-Stairs/index.html">
 <meta property="og:site_name" content="一丶回">
-<meta property="og:description" content="Element-UI Select 绑定值为Object对象类型  本文主要介绍Element-UI(VUE)·Select的value-key属性 在使用Element1.0的开发过程中，option的value只能绑定字符串或数字，常常在选择之后再实时根据v-model绑定的值进行数据的筛选，从而获取到object中其它需要的属性数据； 现在Select对value新增了object数据类型的">
+<meta property="og:description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionYou are climbing a stair case. It takesnsteps to reach to the top.Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb">
 <meta property="og:locale" content="Chinese">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1ft8e8i8cnsj31cd03gq32.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1ftbo0mp8wdj31dg04yaa1.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1ftbo0nb5fwj31d605kt8o.jpg">
-<meta property="og:updated_time" content="2018-07-26T08:47:13.000Z">
+<meta property="og:updated_time" content="2019-02-26T14:55:21.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Element select value-key">
-<meta name="twitter:description" content="Element-UI Select 绑定值为Object对象类型  本文主要介绍Element-UI(VUE)·Select的value-key属性 在使用Element1.0的开发过程中，option的value只能绑定字符串或数字，常常在选择之后再实时根据v-model绑定的值进行数据的筛选，从而获取到object中其它需要的属性数据； 现在Select对value新增了object数据类型的">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1ft8e8i8cnsj31cd03gq32.jpg">
+<meta name="twitter:title" content="Climbing Stairs">
+<meta name="twitter:description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionYou are climbing a stair case. It takesnsteps to reach to the top.Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb">
   
     <link rel="alternate" href="/atom.xml" title="一丶回" type="application/atom+xml">
   
@@ -164,7 +160,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-el-select绑定值为对象类型" style="width: 75%; float:left;"
+          <section id="main" style="float:none;"><article id="post-Climbing-Stairs" style="width: 75%; float:left;"
      class="article article-type-
         post" itemscope itemprop="blogPost" >
             <div id="articleInner" class="article-inner">
@@ -174,7 +170,7 @@
                             
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Element select value-key
+      Climbing Stairs
     </h1>
   
 
@@ -182,12 +178,12 @@
                         
                             <div class="article-meta">
                                 
-	<a href="/2018/07/11/el-select绑定值为对象类型/" class="article-date">
-	  <time datetime="2018-07-11T07:13:29.000Z" itemprop="datePublished">2018-07-11</time>
+	<a href="/2019/02/19/Climbing-Stairs/" class="article-date">
+	  <time datetime="2019-02-19T06:27:50.000Z" itemprop="datePublished">2019-02-19</time>
 	</a>
 
                                     
-    <a class="article-category-link" href="/categories/Element-UI/">Element-UI</a>
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
 
                                         
 	<a class="article-views">
@@ -201,23 +197,15 @@
                             </div>
                             <div class="article-entry" itemprop="articleBody">
                                 
-                                                <h1 id="Element-UI-Select-绑定值为Object对象类型"><a href="#Element-UI-Select-绑定值为Object对象类型" class="headerlink" title="Element-UI Select 绑定值为Object对象类型"></a>Element-UI Select 绑定值为Object对象类型</h1><hr>
-<blockquote>
-<p>本文主要介绍<code>Element-UI(VUE)·Select</code>的<code>value-key</code>属性</p>
-<p>在使用Element1.0的开发过程中，option的<code>value</code>只能绑定字符串或数字，常常在选择之后再实时根据<code>v-model</code>绑定的值进行数据的筛选，从而获取到object中其它需要的属性数据；</p>
-<p>现在<code>Select</code>对value新增了object数据类型的支持，我们来看看要怎么使用吧。</p>
+                                                <blockquote>
+<p>本文为LeetCode刷题系列笔记，你可以在 <a href="https://github.com/yihui37/leetcode" target="_blank" rel="noopener">这里</a> 找到我的项目代码实际运行</p>
 </blockquote>
-<h3 id="Select-官方文档"><a href="#Select-官方文档" class="headerlink" title="Select 官方文档 $"></a>Select 官方文档 <a href="http://element-cn.eleme.io/#/zh-CN/component/select" target="_blank" rel="noopener">$</a></h3><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1ft8e8i8cnsj31cd03gq32.jpg" alt="notice"></p>
-<h4 id="Select-Attributes"><a href="#Select-Attributes" class="headerlink" title="Select Attributes"></a>Select Attributes</h4><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1ftbo0mp8wdj31dg04yaa1.jpg" alt="select attribute value-key"></p>
-<h4 id="Option-Attributes"><a href="#Option-Attributes" class="headerlink" title="Option Attributes"></a>Option Attributes</h4><p> <img src="https://ws2.sinaimg.cn/large/006tNc79gy1ftbo0nb5fwj31d605kt8o.jpg" alt="option attributes value"></p>
-<p>由此可以看出，当<code>value</code>绑定值类型为<strong>object</strong>时，<code>value-key</code>为必填项，其值为对象的某个<strong>key[字符串类型]</strong></p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;el-select</span><br><span class="line">       v-model=&quot;selectItems&quot;                 // Array</span><br><span class="line">       multiple                              // 多选</span><br><span class="line">       value-key=&quot;id&quot;                        // 指定object的唯一标识（id是item的一个key）</span><br><span class="line">       @change=&quot;handleChange&quot;&gt;</span><br><span class="line">            &lt;el-option</span><br><span class="line">                v-for=&quot;item in options&quot;</span><br><span class="line">                :key=&quot;item.id&quot;                // v-for 的 key</span><br><span class="line">                :label=&quot;item.title&quot;</span><br><span class="line">                :value=&quot;item&quot;&gt;</span><br><span class="line">            &lt;/el-option&gt;</span><br><span class="line">    &lt;/el-select&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        options: [&#123;</span><br><span class="line">          id:1,</span><br><span class="line">          value: &apos;选项1&apos;,</span><br><span class="line">          title: &apos;黄金糕&apos;</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">         id:2,</span><br><span class="line">          value: &apos;选项2&apos;,</span><br><span class="line">          title: &apos;双皮奶&apos;</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">          id:3,</span><br><span class="line">          value: &apos;选项3&apos;,</span><br><span class="line">          title: &apos;蚵仔煎&apos;</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">          id:4,</span><br><span class="line">          value: &apos;选项4&apos;,</span><br><span class="line">          title: &apos;龙须面&apos;</span><br><span class="line">        &#125;],</span><br><span class="line">        selectItems: [],</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        handleChange(selectItems)&#123;</span><br><span class="line">            console.log(&apos;选中值&apos;,selectItems);  // 选中值 [object,object]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>TIPS</p>
-<p><strong>注意区分select的<code>value-key</code>和option的<code>key</code></strong></p>
-<p>前者作为select的属性，是value值的唯一标识<br>后者是使用v-for时，给每个节点做一个唯一标识，此时key的作用主要是为了高效的更新虚拟DOM</p>
-</li>
-</ul>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>You are climbing a stair case. It takes<em>n</em>steps to reach to the top.<br>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?<br><strong>Note:</strong>Given<em>n</em>will be a positive integer.</p>
+<p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: 2</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: There are two ways to climb to the top.</span><br><span class="line">1. 1 step + 1 step</span><br><span class="line">2. 2 steps</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: 3</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: There are three ways to climb to the top.</span><br><span class="line">1. 1 step + 1 step + 1 step</span><br><span class="line">2. 1 step + 2 steps</span><br><span class="line">3. 2 steps + 1 step</span><br></pre></td></tr></table></figure></p>
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="解法一-92ms"><a href="#解法一-92ms" class="headerlink" title="解法一       92ms"></a>解法一       92ms</h3><p>我的第一次解题思路：<br>一开始觉得题目很熟悉，但是似懂非懂的完全没有头绪，后来看了提示是<strong>动态规划</strong>类的题目，知道是要根据记住以往的结果来推算演进，但是还是没有想到具体的解决思路。<br>后来在<a href="https://www.cnblogs.com/z941030/p/5615554.html" target="_blank" rel="noopener">网上的解答</a>中，看到了本题的关键点：<br><strong>到达台阶i的最后一步，只存在两种方法——从i-1台阶迈一步，或者从i-2台阶迈两步</strong>，茅塞顿开，想到了具体的解决方法，如下：<br> 具体如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">submit(n) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> one_forward = <span class="number">1</span>,</span><br><span class="line">      two_forward = <span class="number">1</span>,</span><br><span class="line">      res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">      <span class="comment">// res(i) = res(i-1) + res(i-2);</span></span><br><span class="line">      res = one_forward + two_forward;  <span class="comment">// res(i)</span></span><br><span class="line">      two_forward = one_forward;        <span class="comment">// res(i-2)</span></span><br><span class="line">      one_forward = res;                <span class="comment">// res(i-1)</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>此题依然是<a href="https://baike.baidu.com/item/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/529408?fr=aladdin" target="_blank" rel="noopener">动态规划</a>的相关题目，在题目提示中也提及了<a href="https://baike.baidu.com/item/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/99145?fr=aladdin" target="_blank" rel="noopener">斐波那契数列</a>——前两项之和等于后一项。</p>
 
                                                     
                             </div>
@@ -231,7 +219,7 @@
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2018/07/11/el-select绑定值为对象类型/" target="_blank" title="Element select value-key">http://yihui37.github.io/2018/07/11/el-select绑定值为对象类型/</a>
+          <a href="/2019/02/19/Climbing-Stairs/" target="_blank" title="Climbing Stairs">http://yihui37.github.io/2019/02/19/Climbing-Stairs/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -277,19 +265,19 @@
                 
 <nav id="article-nav">
   
-    <a href="/2018/07/16/el-dialog关闭/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/02/20/Symmetric-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          Element Dialog append-to-body
+          Symmetric Tree
         
       </div>
     </a>
   
   
-    <a href="/2018/02/27/css-border滑动动画/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/02/16/Sqrt-x/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">css-border滑动动画</div>
+      <div class="article-nav-title">Sqrt(x)</div>
     </a>
   
 </nav>
@@ -304,7 +292,7 @@
             <strong class="toc-title">
       Inhalt</strong>
             
-                <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Element-UI-Select-绑定值为Object对象类型"><span class="nav-number">1.</span> <span class="nav-text">Element-UI Select 绑定值为Object对象类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Select-官方文档"><span class="nav-number">1.0.1.</span> <span class="nav-text">Select 官方文档 $</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-Attributes"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">Select Attributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Option-Attributes"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">Option Attributes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">1.0.2.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li></ol>
+                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法"><span class="nav-number">2.</span> <span class="nav-text">解法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解法一-92ms"><span class="nav-number">2.1.</span> <span class="nav-text">解法一       92ms</span></a></li></ol></li></ol>
                     
         </div>
     </aside>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>tag: leetcode/easy | 一丶回</title>
+  <title>binary tree level order traversal ii | 一丶回</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YIHUI" />
@@ -11,16 +11,18 @@
   
   
   
-  <meta name="description" content="前端打怪记录&amp;诗与远方，一些日常学习的心得，或是好的文章分享，工作爬坑记录等，或许还会放一些日常生活(*^__^*) 嘻嘻……">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一丶回">
-<meta property="og:url" content="http://yihui37.github.io/tags/LeetCode-easy/index.html">
+  <meta name="description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionGiven a binary tree, return thebottom-up level ordertraversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).For exam">
+<meta name="keywords" content="LeetCode&#x2F;easy,每天进步一点点,Tree,Breadth-first Search">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Binary Tree Level Order Traversal II">
+<meta property="og:url" content="http://yihui37.github.io/2019/02/22/Binary-Tree-Level-Order-Traversal-II/index.html">
 <meta property="og:site_name" content="一丶回">
-<meta property="og:description" content="前端打怪记录&amp;诗与远方，一些日常学习的心得，或是好的文章分享，工作爬坑记录等，或许还会放一些日常生活(*^__^*) 嘻嘻……">
+<meta property="og:description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionGiven a binary tree, return thebottom-up level ordertraversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).For exam">
 <meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2019-02-26T14:58:34.730Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一丶回">
-<meta name="twitter:description" content="前端打怪记录&amp;诗与远方，一些日常学习的心得，或是好的文章分享，工作爬坑记录等，或许还会放一些日常生活(*^__^*) 嘻嘻……">
+<meta name="twitter:title" content="Binary Tree Level Order Traversal II">
+<meta name="twitter:description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionGiven a binary tree, return thebottom-up level ordertraversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).For exam">
   
     <link rel="alternate" href="/atom.xml" title="一丶回" type="application/atom+xml">
   
@@ -59,8 +61,6 @@
   
 
   
-    <link rel="stylesheet" href="/css/archive.css" >
-  
   
   
 
@@ -68,7 +68,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -91,7 +91,7 @@
             
               <a class="brand" style="
                  margin-top: 0px;"  
-                 >
+                href="#" data-toggle="modal" data-target="#myModal" >
                   <img width="124px" height="124px" alt="Hike News" src="/css/images/logo.jpg">
               </a>
             
@@ -160,239 +160,144 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;">
+          <section id="main" style="float:none;"><article id="post-Binary-Tree-Level-Order-Traversal-II" style="width: 75%; float:left;"
+     class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="article-inner">
+                
+                    
+                        <header class="article-header">
+                            
   
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Binary Tree Level Order Traversal II
+    </h1>
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/02/22/Binary-Tree-Level-Order-Traversal-II/" class="archive-article-date">
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+	<a href="/2019/02/22/Binary-Tree-Level-Order-Traversal-II/" class="article-date">
 	  <time datetime="2019-02-22T07:57:31.000Z" itemprop="datePublished">2019-02-22</time>
 	</a>
 
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/02/22/Binary-Tree-Level-Order-Traversal-II/">Binary Tree Level Order Traversal II</a>
-    </h1>
-  
+                                    
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/02/20/Symmetric-Tree/" class="archive-article-date">
-	  <time datetime="2019-02-20T03:42:37.000Z" itemprop="datePublished">2019-02-20</time>
+                                        
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
 	</a>
 
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/02/20/Symmetric-Tree/">Symmetric Tree</a>
-    </h1>
-  
+                                            
 
-    </header>
-  </div>
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                                <blockquote>
+<p>本文为LeetCode刷题系列笔记，你可以在 <a href="https://github.com/yihui37/leetcode" target="_blank" rel="noopener">这里</a> 找到我的项目代码实际运行</p>
+</blockquote>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a binary tree, return the<em>bottom-up level order</em>traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).<br>For example:<br>Given binary tree[3,9,20,null,null,15,7],</p>
+<pre><code>3
+</code></pre><p>   / \<br>  9  20<br>    /  \<br>   15   7</p>
+<p>return its bottom-up level order traversal as:</p>
+<p>[<br>  [15,7],<br>  [9,20],<br>  [3]<br>]</p>
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="解法一-72ms"><a href="#解法一-72ms" class="headerlink" title="解法一       72ms"></a>解法一       72ms</h3><p>我的第一次解题思路：<br>从TreeNode的根root开始将每层node暂存到一个<em>堆栈</em>中，遍历堆栈中的每个node，将node值添加到<em>层结果数组</em>中，将node的左右非null子节点存储到<em>层node数组</em>中，将<em>层结果数组</em>存放到最终结果的开头，将<em>层node数组</em>替换堆栈，进行下一次<em>堆栈</em>遍历。</p>
+<p> 具体如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">submit(root) &#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="literal">null</span>) <span class="keyword">return</span> [];</span><br><span class="line">    <span class="keyword">let</span> stack = [root],</span><br><span class="line">        res = [];</span><br><span class="line">    <span class="keyword">while</span>(stack.length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> tmp = [],</span><br><span class="line">            res_each = [];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> node <span class="keyword">of</span> stack)&#123;</span><br><span class="line">            res_each.push(node.val);</span><br><span class="line">            node.left !== <span class="literal">null</span> &amp;&amp; tmp.push(node.left);</span><br><span class="line">            node.right !== <span class="literal">null</span> &amp;&amp; tmp.push(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">        stack = tmp;</span><br><span class="line">        res.unshift(res_each);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+
+                                                    
+                            </div>
+                            <footer class="article-footer">
+                                
+                                            
+                                                <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>YI HUI</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2019/02/22/Binary-Tree-Level-Order-Traversal-II/" target="_blank" title="Binary Tree Level Order Traversal II">http://yihui37.github.io/2019/02/22/Binary-Tree-Level-Order-Traversal-II/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+                                                    
+                                                        
+                                                            
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+                                                                
+                                                                    
+
+                            </footer>
+            </div>
+            
+                
+<nav id="article-nav">
+  
+    <a href="/2019/02/26/Convert-Sorted-List-to-Binary-Search-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          Convert Sorted List to Binary Search Tree
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/02/20/Symmetric-Tree/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Symmetric Tree</div>
+    </a>
+  
+</nav>
+
+                    
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/02/19/Climbing-Stairs/" class="archive-article-date">
-	  <time datetime="2019-02-19T06:27:50.000Z" itemprop="datePublished">2019-02-19</time>
-	</a>
 
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/02/19/Climbing-Stairs/">Climbing Stairs</a>
-    </h1>
-  
+<!-- Table of Contents -->
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/02/16/Sqrt-x/" class="archive-article-date">
-	  <time datetime="2019-02-16T06:45:36.000Z" itemprop="datePublished">2019-02-16</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/02/16/Sqrt-x/">Sqrt(x)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/02/15/Add-Binary/" class="archive-article-date">
-	  <time datetime="2019-02-15T06:43:53.000Z" itemprop="datePublished">2019-02-15</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/02/15/Add-Binary/">Add Binary</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/02/12/Plus-One/" class="archive-article-date">
-	  <time datetime="2019-02-12T08:01:43.000Z" itemprop="datePublished">2019-02-12</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/02/12/Plus-One/">Plus One</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/01/28/Maximum-Subarray/" class="archive-article-date">
-	  <time datetime="2019-01-28T08:16:33.000Z" itemprop="datePublished">2019-01-28</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/01/28/Maximum-Subarray/">Maximum Subarray</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/01/24/Count-and-Say/" class="archive-article-date">
-	  <time datetime="2019-01-24T08:33:54.000Z" itemprop="datePublished">2019-01-24</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/01/24/Count-and-Say/">Count and Say</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/01/24/Remove-Element/" class="archive-article-date">
-	  <time datetime="2019-01-24T03:36:11.000Z" itemprop="datePublished">2019-01-24</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/01/24/Remove-Element/">Remove Element</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2019/01/23/Remove-Duplicates-from-Sorted-Array/" class="archive-article-date">
-	  <time datetime="2019-01-23T03:14:10.000Z" itemprop="datePublished">2019-01-23</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/01/23/Remove-Duplicates-from-Sorted-Array/">Remove Duplicates from Sorted Array</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/tags/LeetCode-easy/page/2/">2</a><a class="extend next" rel="next" href="/tags/LeetCode-easy/page/2/">weiter &raquo;</a>
-  </nav>
-
-</section>
+    <aside id="toc-sidebar">
+        <div id="toc" class="toc-article">
+            <strong class="toc-title">
+      Inhalt</strong>
+            
+                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法"><span class="nav-number">2.</span> <span class="nav-text">解法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解法一-72ms"><span class="nav-number">2.1.</span> <span class="nav-text">解法一       72ms</span></a></li></ol></li></ol>
+                    
+        </div>
+    </aside>
+    </section>
         
       </div>
       
@@ -488,6 +393,8 @@
 
 
 
+  <script src="/js/dialog.js"></script>
+
 
 
 
@@ -571,6 +478,8 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>

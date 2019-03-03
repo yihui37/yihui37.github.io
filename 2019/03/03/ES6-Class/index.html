@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>convert sorted list to binary search tree | 一丶回</title>
+  <title>es6 class | 一丶回</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YIHUI" />
@@ -11,18 +11,18 @@
   
   
   
-  <meta name="description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionGiven a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST. For this problem, a height-balanced binar">
-<meta name="keywords" content="每天进步一点点,LeetCode&#x2F;medium,Linked List,Depth-first Search">
+  <meta name="description" content="ES6始，Class成为标准，其更加符合面向对象的代码风格优势显得尤为突出，本篇介绍和比较JS构造函数与Class各自特性与区别。  JS构造函数1234567891011121314151617function Animal() &amp;#123;    this.eat = function () &amp;#123;        console.log(&apos;Animal eat&apos;);    &amp;#125;">
+<meta name="keywords" content="每天进步一点点,ES6,Class">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Convert Sorted List to Binary Search Tree">
-<meta property="og:url" content="http://yihui37.github.io/2019/02/26/Convert-Sorted-List-to-Binary-Search-Tree/index.html">
+<meta property="og:title" content="ES6 Class">
+<meta property="og:url" content="http://yihui37.github.io/2019/03/03/ES6-Class/index.html">
 <meta property="og:site_name" content="一丶回">
-<meta property="og:description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionGiven a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST. For this problem, a height-balanced binar">
+<meta property="og:description" content="ES6始，Class成为标准，其更加符合面向对象的代码风格优势显得尤为突出，本篇介绍和比较JS构造函数与Class各自特性与区别。  JS构造函数1234567891011121314151617function Animal() &amp;#123;    this.eat = function () &amp;#123;        console.log(&apos;Animal eat&apos;);    &amp;#125;">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2019-02-26T15:11:22.669Z">
+<meta property="og:updated_time" content="2019-03-03T14:59:09.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Convert Sorted List to Binary Search Tree">
-<meta name="twitter:description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行  QuestionGiven a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST. For this problem, a height-balanced binar">
+<meta name="twitter:title" content="ES6 Class">
+<meta name="twitter:description" content="ES6始，Class成为标准，其更加符合面向对象的代码风格优势显得尤为突出，本篇介绍和比较JS构造函数与Class各自特性与区别。  JS构造函数1234567891011121314151617function Animal() &amp;#123;    this.eat = function () &amp;#123;        console.log(&apos;Animal eat&apos;);    &amp;#125;">
   
     <link rel="alternate" href="/atom.xml" title="一丶回" type="application/atom+xml">
   
@@ -160,7 +160,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Convert-Sorted-List-to-Binary-Search-Tree" style="width: 75%; float:left;"
+          <section id="main" style="float:none;"><article id="post-ES6-Class" style="width: 75%; float:left;"
      class="article article-type-
         post" itemscope itemprop="blogPost" >
             <div id="articleInner" class="article-inner">
@@ -170,7 +170,7 @@
                             
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Convert Sorted List to Binary Search Tree
+      ES6 Class
     </h1>
   
 
@@ -178,12 +178,12 @@
                         
                             <div class="article-meta">
                                 
-	<a href="/2019/02/26/Convert-Sorted-List-to-Binary-Search-Tree/" class="article-date">
-	  <time datetime="2019-02-26T06:33:54.000Z" itemprop="datePublished">2019-02-26</time>
+	<a href="/2019/03/03/ES6-Class/" class="article-date">
+	  <time datetime="2019-03-03T14:57:27.000Z" itemprop="datePublished">2019-03-03</time>
 	</a>
 
                                     
-    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
 
                                         
 	<a class="article-views">
@@ -198,17 +198,30 @@
                             <div class="article-entry" itemprop="articleBody">
                                 
                                                 <blockquote>
-<p>本文为LeetCode刷题系列笔记，你可以在 <a href="https://github.com/yihui37/leetcode" target="_blank" rel="noopener">这里</a> 找到我的项目代码实际运行</p>
+<p>ES6始，Class成为标准，其更加符合面向对象的代码风格优势显得尤为突出，本篇介绍和比较JS构造函数与Class各自特性与区别。</p>
 </blockquote>
-<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.</p>
-<p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of<em>every</em>node never differ by more than 1.</p>
-<p><strong>Example:</strong><br>Given the sorted linked list: [-10,-3,0,5,9],</p>
-<p>One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     0</span><br><span class="line">    / \</span><br><span class="line">  -3   9</span><br><span class="line">  /   /</span><br><span class="line">-10  5</span><br></pre></td></tr></table></figure></p>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="解法一-不知哪里有问题"><a href="#解法一-不知哪里有问题" class="headerlink" title="解法一       不知哪里有问题"></a>解法一       不知哪里有问题</h3><p>我的第一次解题思路：<br>依次遍历链表中的node填充到二叉树中。</p>
-<p>具体如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">submit(head) &#123;</span><br><span class="line">    <span class="keyword">if</span>(head==<span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">let</span> root = <span class="keyword">new</span> TreeNode(head.val);</span><br><span class="line">    <span class="keyword">let</span> curLevelTreeNode = [root];</span><br><span class="line">    <span class="keyword">while</span>(head!==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> nodeTmp = [];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> node <span class="keyword">of</span> curLevelTreeNode)&#123;</span><br><span class="line">            head = head.next;</span><br><span class="line">            <span class="keyword">if</span>(head==<span class="literal">null</span>) <span class="keyword">break</span>;</span><br><span class="line">            node.left = <span class="keyword">new</span> TreeNode(head.val);</span><br><span class="line">            nodeTmp.push(node.left);</span><br><span class="line">            head = head.next;</span><br><span class="line">            <span class="keyword">if</span>(head==<span class="literal">null</span>) <span class="keyword">break</span>;</span><br><span class="line">            node.right = <span class="keyword">new</span> TreeNode(head.val);</span><br><span class="line">            nodeTmp.push(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">        curLevelTreeNode = nodeTmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>提交后显示为错误答案:<br>[image:7E2FB74D-5CFA-4A1A-8BA8-35A90981E38A-40519-000410855E61CF30/006tKfTcgy1g0juo8b0nqj30ia09mt9b.jpg]<br>但是在题目 <a href="https://leetcode.com/problems/balanced-binary-tree/" target="_blank" rel="noopener">110. Balanced Binary Tree</a>验证一个二叉树是否为高度平衡二叉树中，将我的输出结果拿去验证，却是验证成功<br>[image:934DA9E1-A818-48C5-B90C-2A0C82DE4871-40519-000410855E1E5C04/006tKfTcgy1g0jum0sdpkj30cy0a4t91.jpg]<br>即是一个符合条件的高度平衡二叉树，不知哪里出了问题，无法通过，如有知道的，还请不吝赐教。</p>
-<h3 id="解法二-76ms"><a href="#解法二-76ms" class="headerlink" title="解法二       76ms"></a>解法二       76ms</h3><p>为保证创建一个<code>height-balanced</code>的二叉树，首先将链表转化为一个<em>数组</em>，然后取数组中间值作为根节点，再将数组从中间分为左右两个数组，作为根的左右子节点，再以同样方式建立各个叶子节点。</p>
-<p>具体如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">submit(head) &#123;</span><br><span class="line">    <span class="keyword">if</span>(head==<span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">// 转为数组</span></span><br><span class="line">    <span class="keyword">let</span> arr = [];</span><br><span class="line">    <span class="keyword">while</span>(head!=<span class="literal">null</span>)&#123;</span><br><span class="line">        arr.push(head.val);</span><br><span class="line">        head = head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 将数组转化为二叉树</span></span><br><span class="line">    <span class="keyword">return</span> buildTree(arr,<span class="number">0</span>,arr.length - <span class="number">1</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> buildTree = <span class="function"><span class="keyword">function</span> (<span class="params">nums,left,right</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(left &gt; right) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(left == right) <span class="keyword">return</span> <span class="keyword">new</span> TreeNode(nums[left]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> mid = <span class="built_in">parseInt</span>((left + right) / <span class="number">2</span>),</span><br><span class="line">        root = <span class="keyword">new</span> TreeNode(nums[mid]);</span><br><span class="line">    root.left = buildTree(nums,left,mid<span class="number">-1</span>);</span><br><span class="line">    root.right = buildTree(nums,mid + <span class="number">1</span>,right);</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="JS构造函数"><a href="#JS构造函数" class="headerlink" title="JS构造函数"></a>JS构造函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.eat = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Animal eat'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.bark = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Animal bark'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Dog.prototype = <span class="keyword">new</span> Animal(); <span class="comment">// 继承</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hashiqi = <span class="keyword">new</span> Dog();  <span class="comment">// 实例化</span></span><br><span class="line">hashiqi.eat();  <span class="comment">// Animal eat</span></span><br><span class="line">hashiqi.bark(); <span class="comment">// Animal bark</span></span><br></pre></td></tr></table></figure>
+<h2 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    eat() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' eat'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;  <span class="comment">// 定义的同时继承</span></span><br><span class="line">    <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">        <span class="keyword">super</span>(name);        <span class="comment">// 执行被继承的constructor</span></span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    bark() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' bark'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dog = <span class="keyword">new</span> Dog(<span class="string">'哈士奇'</span>);</span><br><span class="line">dog.eat();  <span class="comment">// 哈士奇 eat</span></span><br><span class="line">dog.bark(); <span class="comment">// 哈士奇 bark</span></span><br></pre></td></tr></table></figure>
+<h2 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 验证JS构造函数</span></span><br><span class="line"><span class="keyword">typeof</span> Fn                          <span class="comment">// function</span></span><br><span class="line">Fn.prototype.constructor === Fn    <span class="comment">// true</span></span><br><span class="line">fn.__proto__ === Fn.prototype      <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 验证Class</span></span><br><span class="line"><span class="keyword">typeof</span> Class                             <span class="comment">// function</span></span><br><span class="line">Class.prototype.constructor === Class    <span class="comment">// true</span></span><br><span class="line"><span class="class"><span class="keyword">class</span>.<span class="title">__proto__</span> </span>=== Class.prototype      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>由此可见<strong>Class本质是一个语法糖</strong>，它实际上仍然使用的是JS的原型来完成继承。</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li>ES6之前 继承通过<em>将低级构造函数的原型赋值为高级函数的实例</em>来实现<br><code>Dog.prototype = new Animal()</code></li>
+<li>ES6 Class <em>在定义Class的时候使用extends来实现继承</em><br><code>class Dog extends Animal</code><ol>
+<li>如果在定义<code>Class</code>时使用了继承<code>extends</code>，则必须有<code>Super</code></li>
+<li><code>Super</code>是将被继承<code>class</code>中的<code>constructor</code>执行一遍</li>
+</ol>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>Class语法上更贴合面向对象的写法</li>
+<li>Class实现继承更加易读、易理解</li>
+<li>更易于写java等后端语言的使用</li>
+<li>更符合学生课堂学习内容</li>
+<li>Class本质是语法糖，使用的是构造函数中的prototype</li>
+</ul>
+<blockquote>
+<p>学习自<a href="https://www.imooc.com/t/4427201" target="_blank" rel="noopener">@双越_慕课网精英讲师</a>的 <a href="https://coding.imooc.com/class/190.html" target="_blank" rel="noopener">揭秘一线互联网公司高级前端JavaScript面试</a> </p>
+</blockquote>
 
                                                     
                             </div>
@@ -222,7 +235,7 @@
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2019/02/26/Convert-Sorted-List-to-Binary-Search-Tree/" target="_blank" title="Convert Sorted List to Binary Search Tree">http://yihui37.github.io/2019/02/26/Convert-Sorted-List-to-Binary-Search-Tree/</a>
+          <a href="/2019/03/03/ES6-Class/" target="_blank" title="ES6 Class">http://yihui37.github.io/2019/03/03/ES6-Class/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -268,19 +281,10 @@
                 
 <nav id="article-nav">
   
-    <a href="/2019/02/27/模块化/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          模块化
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/02/22/Binary-Tree-Level-Order-Traversal-II/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/03/01/Triangle/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">Binary Tree Level Order Traversal II</div>
+      <div class="article-nav-title">Triangle</div>
     </a>
   
 </nav>
@@ -295,7 +299,7 @@
             <strong class="toc-title">
       Inhalt</strong>
             
-                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法"><span class="nav-number">2.</span> <span class="nav-text">解法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解法一-不知哪里有问题"><span class="nav-number">2.1.</span> <span class="nav-text">解法一       不知哪里有问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法二-76ms"><span class="nav-number">2.2.</span> <span class="nav-text">解法二       76ms</span></a></li></ol></li></ol>
+                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS构造函数"><span class="nav-number">1.</span> <span class="nav-text">JS构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class"><span class="nav-number">2.</span> <span class="nav-text">Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法糖"><span class="nav-number">3.</span> <span class="nav-text">语法糖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">4.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.1.</span> <span class="nav-text">总结</span></a></li></ol></li></ol>
                     
         </div>
     </aside>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>best time to buy and sell stock ii | 一丶回</title>
+  <title>异步 | 一丶回</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YIHUI" />
@@ -11,18 +11,18 @@
   
   
   
-  <meta name="description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行买卖股票的最佳时机 II - LeetCode 阅读  QuestionSay you have an array for which the I^th element is the price of a given stock on day i. Design an algorithm to find the maxi">
-<meta name="keywords" content="LeetCode&#x2F;easy,每天进步一点点,LeetCode&#x2F;Array,LeetCode&#x2F;Greedy">
+  <meta name="description" content="单线程只有一个线程，同一时间只能做一件事原因：避免DOM渲染的冲突（浏览器渲染DOM与执行JS用的同一线程） 浏览器需要渲染DOM  JS可以修改DOM结构  JS执行的时候，浏览器DOM渲染会暂停  两端JS也不能同时执行，否则会冲突  Html5中的webworker支持多线程，但是不能访问DOM   解决方案：异步 问题  1- 没有按照书写顺序执行，可读性差 1- callback中不容易">
+<meta name="keywords" content="每天进步一点点,异步">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Best Time to Buy and Sell Stock II">
-<meta property="og:url" content="http://yihui37.github.io/2019/03/04/Best-Time-to-Buy-and-Sell-Stock-II/index.html">
+<meta property="og:title" content="异步">
+<meta property="og:url" content="http://yihui37.github.io/2019/03/18/异步/index.html">
 <meta property="og:site_name" content="一丶回">
-<meta property="og:description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行买卖股票的最佳时机 II - LeetCode 阅读  QuestionSay you have an array for which the I^th element is the price of a given stock on day i. Design an algorithm to find the maxi">
+<meta property="og:description" content="单线程只有一个线程，同一时间只能做一件事原因：避免DOM渲染的冲突（浏览器渲染DOM与执行JS用的同一线程） 浏览器需要渲染DOM  JS可以修改DOM结构  JS执行的时候，浏览器DOM渲染会暂停  两端JS也不能同时执行，否则会冲突  Html5中的webworker支持多线程，但是不能访问DOM   解决方案：异步 问题  1- 没有按照书写顺序执行，可读性差 1- callback中不容易">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2019-04-22T14:33:58.617Z">
+<meta property="og:updated_time" content="2019-04-22T14:43:24.750Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Best Time to Buy and Sell Stock II">
-<meta name="twitter:description" content="本文为LeetCode刷题系列笔记，你可以在 这里 找到我的项目代码实际运行买卖股票的最佳时机 II - LeetCode 阅读  QuestionSay you have an array for which the I^th element is the price of a given stock on day i. Design an algorithm to find the maxi">
+<meta name="twitter:title" content="异步">
+<meta name="twitter:description" content="单线程只有一个线程，同一时间只能做一件事原因：避免DOM渲染的冲突（浏览器渲染DOM与执行JS用的同一线程） 浏览器需要渲染DOM  JS可以修改DOM结构  JS执行的时候，浏览器DOM渲染会暂停  两端JS也不能同时执行，否则会冲突  Html5中的webworker支持多线程，但是不能访问DOM   解决方案：异步 问题  1- 没有按照书写顺序执行，可读性差 1- callback中不容易">
   
     <link rel="alternate" href="/atom.xml" title="一丶回" type="application/atom+xml">
   
@@ -99,9 +99,9 @@
             <div class="navbar-collapse collapse">
               <ul class="hnav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Startseite</a> </li>
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archive</a> </li>
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
                 
                   <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
                 
@@ -119,7 +119,7 @@
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Schreib etwas..." />
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -131,11 +131,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Beiträge',
-            PAGES: 'Seiten',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
             CATEGORIES: 'Categories',
             TAGS: 'Tags',
-            UNTITLED: '(Unbenannt)',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -160,7 +160,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Best-Time-to-Buy-and-Sell-Stock-II" style="width: 75%; float:left;"
+          <section id="main" style="float:none;"><article id="post-异步" style="width: 75%; float:left;"
      class="article article-type-
         post" itemscope itemprop="blogPost" >
             <div id="articleInner" class="article-inner">
@@ -170,7 +170,7 @@
                             
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Best Time to Buy and Sell Stock II
+      异步
     </h1>
   
 
@@ -178,12 +178,12 @@
                         
                             <div class="article-meta">
                                 
-	<a href="/2019/03/04/Best-Time-to-Buy-and-Sell-Stock-II/" class="article-date">
-	  <time datetime="2019-03-04T06:32:14.000Z" itemprop="datePublished">2019-03-04</time>
+	<a href="/2019/03/18/异步/" class="article-date">
+	  <time datetime="2019-03-18T10:40:55.000Z" itemprop="datePublished">2019-03-18</time>
 	</a>
 
                                     
-    <a class="article-category-link" href="/categories/Best-Time-to-Buy-and-Sell-Stock-II/">Best Time to Buy and Sell Stock II</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
 
                                         
 	<a class="article-views">
@@ -197,24 +197,90 @@
                             </div>
                             <div class="article-entry" itemprop="articleBody">
                                 
-                                                <blockquote>
-<p>本文为LeetCode刷题系列笔记，你可以在 <a href="https://github.com/yihui37/leetcode" target="_blank" rel="noopener">这里</a> 找到我的项目代码实际运行<br><a href="https://leetcode-cn.com/articles/best-time-to-buy-and-sell-stock-ii/" target="_blank" rel="noopener">买卖股票的最佳时机 II - LeetCode 阅读</a></p>
-</blockquote>
-<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Say you have an array for which the <em>I^th</em> element is the price of a given stock on day <em>i</em>.</p>
-<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).</p>
-<p><strong>Note:</strong>You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
-<p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [7,1,5,3,6,4]</span><br><span class="line">Output: 7</span><br><span class="line">Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.</span><br><span class="line">   Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.</span><br></pre></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3,4,5]</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.</span><br><span class="line">    Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are engaging multiple transactions at the same time. You must sell before buying again.</span><br></pre></td></tr></table></figure>
-<p><strong>Example 3:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [7,6,4,3,1]</span><br><span class="line">Output: 0</span><br><span class="line">Explanation: In this case, no transaction is done, i.e. max profit = 0.</span><br></pre></td></tr></table></figure>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="解法一-64ms"><a href="#解法一-64ms" class="headerlink" title="解法一      64ms"></a>解法一      64ms</h3><p>我的第一次解题思路：<br>将每天的股票值画成折线图，仅计算每个上升段落的最高与最低差值。即多次买卖都是在最低点买入并在最高点卖出。</p>
-<p>具体如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">submit(prices) &#123;</span><br><span class="line">    <span class="keyword">if</span>(!prices.length) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> startPrice = prices[<span class="number">0</span>],</span><br><span class="line">        stepProfit = <span class="number">0</span>,</span><br><span class="line">        result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i&lt;prices.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices[i] &lt; prices[i<span class="number">-1</span>])&#123;</span><br><span class="line">            result += stepProfit;</span><br><span class="line">            startPrice = prices[i];</span><br><span class="line">            stepProfit = <span class="number">0</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(prices[i] &gt; prices[i<span class="number">-1</span>])&#123;</span><br><span class="line">            stepProfit = prices[i] - startPrice;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    result += stepProfit;   <span class="comment">// 加上最后一次的利润</span></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="解法二-64ms"><a href="#解法二-64ms" class="headerlink" title="解法二  64ms"></a>解法二  64ms</h3><p><strong>将上一方法代码精炼一下，不需要再记录每个谷值后的峰值和它们之间的差额。</strong><br>将每天的股票值画成折线图，假设每天都将前一天的卖出并买入当天的，亏本的日子都排除，即计算每天涨的部分和，持续增加从连续交易中获得的利润。</p>
-<p>具体如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">submit(prices) &#123;</span><br><span class="line">    <span class="keyword">if</span>(!prices.length) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i&lt;prices.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices[i] &gt; prices[i<span class="number">-1</span>])&#123;</span><br><span class="line">            result += prices[i] - prices[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+                                                <h2 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h2><h3 id="只有一个线程，同一时间只能做一件事"><a href="#只有一个线程，同一时间只能做一件事" class="headerlink" title="只有一个线程，同一时间只能做一件事"></a>只有一个线程，同一时间只能做一件事</h3><h3 id="原因：避免DOM渲染的冲突（浏览器渲染DOM与执行JS用的同一线程）"><a href="#原因：避免DOM渲染的冲突（浏览器渲染DOM与执行JS用的同一线程）" class="headerlink" title="原因：避免DOM渲染的冲突（浏览器渲染DOM与执行JS用的同一线程）"></a>原因：避免DOM渲染的冲突（浏览器渲染DOM与执行JS用的同一线程）</h3><ul>
+<li><p>浏览器需要渲染DOM</p>
+</li>
+<li><p>JS可以修改DOM结构</p>
+</li>
+<li><p>JS执行的时候，浏览器DOM渲染会暂停</p>
+</li>
+<li><p>两端JS也不能同时执行，否则会冲突</p>
+</li>
+<li><p>Html5中的webworker支持多线程，但是不能访问DOM</p>
+</li>
+</ul>
+<h3 id="解决方案：异步"><a href="#解决方案：异步" class="headerlink" title="解决方案：异步"></a>解决方案：异步</h3><ul>
+<li>问题</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 没有按照书写顺序执行，可读性差</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- callback中不容易模块化</span><br></pre></td></tr></table></figure>
+<h2 id="Event-loop"><a href="#Event-loop" class="headerlink" title="Event-loop"></a>Event-loop</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><p>事件轮询</p>
+</li>
+<li><p>同步代码，直接执行</p>
+</li>
+<li><p>异步函数先放在<strong>异步队列</strong>中</p>
+</li>
+<li><p>待同步函数执行完毕，<strong>轮询执行</strong>异步队列中的函数</p>
+</li>
+</ul>
+<h3 id="提问回答点"><a href="#提问回答点" class="headerlink" title="提问回答点"></a>提问回答点</h3><ul>
+<li><p>JS异步解决方案，事件轮询</p>
+</li>
+<li><p>异步队列</p>
+</li>
+<li><p>轮询过程</p>
+</li>
+</ul>
+<h2 id="jQuery的Deferred"><a href="#jQuery的Deferred" class="headerlink" title="jQuery的Deferred"></a>jQuery的Deferred</h2><h3 id="Jquery-1-5版本新增Deffered"><a href="#Jquery-1-5版本新增Deffered" class="headerlink" title="Jquery 1.5版本新增Deffered"></a>Jquery 1.5版本新增Deffered</h3><h3 id="初步引入了Promise的概念（-then）"><a href="#初步引入了Promise的概念（-then）" class="headerlink" title="初步引入了Promise的概念（.then）"></a>初步引入了Promise的概念（.then）</h3><h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><ul>
+<li><p>并没有改变JS异步和单线程的本质</p>
+</li>
+<li><p>只能从写法上杜绝callback这种形式</p>
+</li>
+<li><p>自身是一种<strong>语法糖</strong>，但是解耦了代码</p>
+</li>
+<li><p>体现了<strong>开放封闭原则</strong></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 对修改封闭，对扩展开放，减少了回归测试的成本</span><br></pre></td></tr></table></figure>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul>
+<li>$.Deferred()</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- D.resolve  D.reject</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- D.then /  D.done D.fail  (被动监听的方法)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- D.promise</span><br></pre></td></tr></table></figure>
+<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ul>
+<li>只是将callback拆分了</li>
+</ul>
+<h3 id="异常捕获（代码健壮性）"><a href="#异常捕获（代码健壮性）" class="headerlink" title="异常捕获（代码健壮性）"></a>异常捕获（代码健壮性）</h3><ul>
+<li>promise.then().then().catch(err=&gt;统一捕获异常，包含reject和error)</li>
+</ul>
+<h3 id="多个串联"><a href="#多个串联" class="headerlink" title="多个串联"></a>多个串联</h3><ul>
+<li>Promise1.then(return promise2).then() 链式</li>
+</ul>
+<h3 id="all和-race"><a href="#all和-race" class="headerlink" title=".all和.race"></a>.all和.race</h3><ul>
+<li>处理多个promise</li>
+</ul>
+<h3 id="Promise标准"><a href="#Promise标准" class="headerlink" title="Promise标准"></a>Promise标准</h3><ul>
+<li>三种状态 Pending fulfilled rejected</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- p -&gt; f 或 p -&gt; r 状态不可逆</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实例必须实现then方法</p>
+</li>
+<li><p>then必须可以接收两个函数作为参数</p>
+</li>
+<li><p>then返回的必须是一个promise实例</p>
+</li>
+</ul>
+<h2 id="async-await"><a href="#async-await" class="headerlink" title="async await"></a>async await</h2><h3 id="同步的写法来写异步（代码编写顺序与执行顺序一致）"><a href="#同步的写法来写异步（代码编写顺序与执行顺序一致）" class="headerlink" title="同步的写法来写异步（代码编写顺序与执行顺序一致）"></a>同步的写法来写异步（代码编写顺序与执行顺序一致）</h3><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><ul>
+<li><p>使用await，函数必须用async标识</p>
+</li>
+<li><p>await后面跟的是一个promise实例</p>
+</li>
+<li><p>需要babel-polyfill支持</p>
+</li>
+</ul>
 
                                                     
                             </div>
@@ -228,7 +294,7 @@
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2019/03/04/Best-Time-to-Buy-and-Sell-Stock-II/" target="_blank" title="Best Time to Buy and Sell Stock II">http://yihui37.github.io/2019/03/04/Best-Time-to-Buy-and-Sell-Stock-II/</a>
+          <a href="/2019/03/18/异步/" target="_blank" title="异步">http://yihui37.github.io/2019/03/18/异步/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -274,18 +340,18 @@
                 
 <nav id="article-nav">
   
-    <a href="/2019/03/05/小趣味/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
+    <a href="/2019/03/24/Best-Time-to-Buy-and-Sell-Stock-II/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          小趣味
+          Best Time to Buy and Sell Stock II
         
       </div>
     </a>
   
   
     <a href="/2019/03/03/ES6-Class/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Älter</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">ES6 Class</div>
     </a>
   
@@ -299,9 +365,9 @@
     <aside id="toc-sidebar">
         <div id="toc" class="toc-article">
             <strong class="toc-title">
-      Inhalt</strong>
+      Contents</strong>
             
-                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法"><span class="nav-number">2.</span> <span class="nav-text">解法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解法一-64ms"><span class="nav-number">2.1.</span> <span class="nav-text">解法一      64ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法二-64ms"><span class="nav-number">2.2.</span> <span class="nav-text">解法二  64ms</span></a></li></ol></li></ol>
+                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单线程"><span class="nav-number">1.</span> <span class="nav-text">单线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#只有一个线程，同一时间只能做一件事"><span class="nav-number">1.1.</span> <span class="nav-text">只有一个线程，同一时间只能做一件事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原因：避免DOM渲染的冲突（浏览器渲染DOM与执行JS用的同一线程）"><span class="nav-number">1.2.</span> <span class="nav-text">原因：避免DOM渲染的冲突（浏览器渲染DOM与执行JS用的同一线程）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案：异步"><span class="nav-number">1.3.</span> <span class="nav-text">解决方案：异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-loop"><span class="nav-number">2.</span> <span class="nav-text">Event-loop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提问回答点"><span class="nav-number">2.2.</span> <span class="nav-text">提问回答点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery的Deferred"><span class="nav-number">3.</span> <span class="nav-text">jQuery的Deferred</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Jquery-1-5版本新增Deffered"><span class="nav-number">3.1.</span> <span class="nav-text">Jquery 1.5版本新增Deffered</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初步引入了Promise的概念（-then）"><span class="nav-number">3.2.</span> <span class="nav-text">初步引入了Promise的概念（.then）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本质"><span class="nav-number">3.3.</span> <span class="nav-text">本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">3.4.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">4.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法"><span class="nav-number">4.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常捕获（代码健壮性）"><span class="nav-number">4.2.</span> <span class="nav-text">异常捕获（代码健壮性）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个串联"><span class="nav-number">4.3.</span> <span class="nav-text">多个串联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#all和-race"><span class="nav-number">4.4.</span> <span class="nav-text">.all和.race</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise标准"><span class="nav-number">4.5.</span> <span class="nav-text">Promise标准</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#async-await"><span class="nav-number">5.</span> <span class="nav-text">async await</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步的写法来写异步（代码编写顺序与执行顺序一致）"><span class="nav-number">5.1.</span> <span class="nav-text">同步的写法来写异步（代码编写顺序与执行顺序一致）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">5.2.</span> <span class="nav-text">用法</span></a></li></ol></li></ol>
                     
         </div>
     </aside>
